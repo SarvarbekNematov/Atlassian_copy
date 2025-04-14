@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import {  useLayoutEffect, useRef, useState } from "react";
 import "./empower.css";
 
 const LinksArr = [
@@ -63,21 +63,18 @@ const Empower = () => {
   const [activeHeight, setActiveHeight] = useState(0);
 const activeRef = useRef<HTMLDivElement | null>(null);
 
-  useEffect(() => {
-    const handleResize = () => {
-      if (activeRef.current) {
-        setActiveHeight(activeRef.current.offsetHeight);
-      }
-    };
-  
-    handleResize(); 
-    console.log('activeHeight' , activeHeight);
+useLayoutEffect(() => {
+  const handleResize = () => {
+    if (activeRef.current) {
+      setActiveHeight(activeRef.current.offsetHeight);
+    }
+  };
 
-    console.log(window);
-    
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, [activeId]);
+  handleResize();
+
+  window.addEventListener("resize", handleResize);
+  return () => window.removeEventListener("resize", handleResize);
+}, [activeId]);
   
   
   return (
@@ -97,7 +94,7 @@ const activeRef = useRef<HTMLDivElement | null>(null);
             </li>
           ))}
         </ul>
-        <div className="card_container" style={{height: activeHeight}}>
+        <div className="card_container" style={{height: activeHeight < 200 ? 400 : activeHeight }}>
           {
             LinksArr.map(item=>(
               <div key={item.id} ref={item.id === activeId ? activeRef : null} className={`empower_card ${activeId === item.id ? "card_active" : ""}`}>

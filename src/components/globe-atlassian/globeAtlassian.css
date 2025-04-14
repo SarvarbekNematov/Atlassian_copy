@@ -1,0 +1,147 @@
+.section_globe{
+    clip-path: polygon(0 0, 100% 2%, 100% 96%, 0 100%);
+    background-color: #f5f5f6;
+    overflow: hidden;
+}
+
+.globe{
+    padding: 60px 32px 0; 
+    margin-bottom: auto;
+}
+.globe_block{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.globe_double_block{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.globe_title{
+    line-height: 2.375rem;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.plusIcon{
+    color: #1868DB;
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.globe_desc{
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: #292a2e;
+}
+
+.globe_sub_block{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.globe_lining_block{
+    padding-left: 20px;
+    border-left: 2px solid #101214;
+}
+
+.foizIcon{
+    color: #1868DB;
+    font-size: 3rem;
+    line-height: 1;
+    font-weight: 700;
+}
+
+.globe_sub_desc{
+    line-height: 1.5rem;
+    font-size: 1rem;
+    color: #292a2e;
+}
+
+.globe_img_block{
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding: 60px 0 0;
+}
+
+.globe_img_sub_block{
+    position: absolute;
+    height: auto;
+    width: calc(100% + 75pt);
+    aspect-ratio: 1 / 1;
+    transform: translateY(-9%) rotate(142deg);
+}
+
+.circularIcon{
+    width: 113px;
+    height: 110px;
+    border-radius: 50%;
+    inset-block-start: -10%;
+    inset-inline-end: 2%;
+    transform: translateY(-50%);
+    margin-left: 60%;
+    background-color: #fca400 ;
+    opacity: 0.65;
+    z-index: 2;
+}
+
+.lightningIcon{
+    display: none;
+}
+
+@media (min-width:768px) {
+    .globe_block{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .globe_double_block{
+        display: flex;
+        flex-direction: row;
+    }
+    .globe_sub_block{
+        padding: 0 40px 0 0;
+    }
+    .globe{
+        margin-bottom: 100px;
+    }
+    .globe_img_sub_block{
+        transform: rotate(33deg);
+        inset-block-start: -7%;
+        inset-inline-start: 10%;
+        width: 20rem;
+        z-index: -1;
+    }
+    .globe_img{
+        max-width: 100%;
+    }
+    .globe_img_block{
+        display: flex;
+        flex-direction: row-reverse;
+    }
+    .lightningIcon{
+        display: block;
+        margin-top: 80%;
+        margin-left: -30%;
+    }
+    .circularIcon{
+        position: absolute;
+        z-index: 2;
+        left: 60%;
+        top: 20%;
+    }
+    .globe{
+        padding: 60px 60px 0;
+    }
+    .section_globe{
+        padding-top: 30px;
+        clip-path: polygon(0 0, 86% 3%, 86% 6%, 100% 5%, 100% 93%, 19.2% 100%, 19% 84%, 0 84%);
+    }
+}

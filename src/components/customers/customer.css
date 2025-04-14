@@ -1,0 +1,161 @@
+.customer_block{
+    margin: 40px 0;
+    padding: 0 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+}
+
+.customer_title{
+    font-size: 2rem;
+    line-height: 2.375rem;
+    font-weight: 700;
+    color: #101214;
+}
+
+.customer_desc{
+    font-size: 1.125rem;
+    line-height: 1.625rem;
+    color: #292a2e;
+}
+
+.customer_link{
+    color: #1868DB;
+}
+
+.customer_card{
+    clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
+    background-color: #000;
+    color: #fff;
+    padding: 0 32px;
+}
+
+.customer_sub_title{
+    text-transform: uppercase;
+    line-height: 1.125rem;
+    font-size: .875rem;
+}
+
+.customer_sub_desc{
+    line-height: 1.75rem;
+    font-size: 1.25rem;
+    font-weight: 300;
+}
+
+.customer_name{
+    text-transform: uppercase;
+    line-height: 1.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.customer_workplace{
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+.customer_card_container{
+    position: relative;
+    width: 100%;
+}
+
+.customer_card_block{
+    position: absolute;
+    padding: 0 32px;
+    opacity: 0;
+    transition: transform 0.5s ease-in-out;
+    transform: translateX(-13%);
+    pointer-events: none;
+}
+
+.customer_card_active{
+    opacity: 1;
+    transform: translateX(0);
+    width: 100%;
+}
+
+.customer_sub_card{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin-bottom: 40px;
+}
+
+.customer_sub_block{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    animation: fadeswipesmall 1s ease-in-out 1;
+}
+.customer_list{
+    width: 100%;
+    display: flex;
+    border-top: 1px solid #ffffff81;
+    overflow-x: auto;
+    white-space: nowrap;
+    gap: 32px;
+    padding-bottom: 40px;
+}
+.customer_item{
+    padding-top: 20px;
+    width: 143px;
+    height: 55px;
+    display: flex;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+.customer_active{
+    border-top: 2.5px solid #fff;
+}
+.customer_card_link{
+    cursor: pointer;
+}
+
+
+@keyframes fadeswipesmall {
+    0% {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.customer_img_block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-10%);
+    position: relative;
+    z-index: 2;
+}
+
+.customer_img{
+    width: 100%;
+    max-width: 404px;
+}
+
+@media (min-width: 1024px) {
+    .customer_sub_card{
+        display: flex;
+        flex-direction: row;
+        padding-top: 80px;
+        gap: 1.25rem;
+        text-align: left;
+    }
+    .customer_img_block{
+        transform: translateY(0);
+    }
+    .customer_sub_block{
+        text-align: left;
+    }
+    .customer_sub_title{
+        font-size: 1.75rem;
+        line-height: 2.5rem;
+    }
+}

@@ -1,0 +1,126 @@
+
+
+.empower_title{
+    text-align: center;
+    line-height: 2.375rem;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #101214;
+    padding: 30px 32px 0;
+}
+
+.empower_list{
+    display: flex;
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 0 32px 24px;
+    scrollbar-width: none;
+    gap: 12px;
+    margin-top: 30px;
+}
+.empower_item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    padding: 6px 32px 8px 32px;
+    gap: 4px;
+    /* border: 2px solid #1868DB; */
+    border-radius: 40px;
+    background-color: #f8f8f8;
+    cursor: pointer;
+}
+
+.empower_item button {
+    cursor: pointer;
+}
+
+.active{
+    background-color: #e9f2fe;
+    border: 2px solid #1868DB;
+}
+
+.card_container{
+    position: relative;
+    width: 100%;
+}
+
+.empower_card {
+    position: absolute;
+    padding: 0 32px;
+    opacity: 0;
+    transition: transform 0.5s ease-in-out;
+    transform: translateX(-13%);
+    pointer-events: none;
+}
+
+.empower_card.card_active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.empower_sub_block{
+    padding-block-end: 1pc;
+}
+
+.empower_sub_title{
+    font-weight: 700;
+    line-height: 1.87rem;
+    font-size: 1.5rem;
+    color: #101214;
+}
+.empower_desc{
+    line-height: 1.5rem;
+    font-size: 1rem;
+    margin: 8px 0 16px;
+}
+
+.empower_link{
+    color: #1868DB;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.empower_img_block{
+    margin-top: 20px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+@media (min-width: 768px){
+    .empower_card{
+        padding: 0 60px;
+    }
+    .empower_list{
+        padding: 0 60px 24px;
+    }
+}
+
+@media (min-width:1024px) {
+    .empower_card{
+        display: flex;
+        gap: 32px;
+    }
+    .empower_img_block{
+        margin: 0;
+    }
+    .empower_sub_title{
+        font-size: 2rem;
+        line-height: 2.375rem;
+    }
+    .empower_desc{
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+    .empower_link{
+        margin-top: 24px;
+        padding-top: 8px;
+        margin-left: 0;
+        justify-content: left;
+    }
+    .empower_sub_block{
+        padding-bottom: 0;
+    }
+}

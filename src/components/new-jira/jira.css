@@ -1,0 +1,151 @@
+.jira{
+    padding: 0 32px;
+    margin-bottom: 60px;
+    overflow-x: hidden;
+}
+
+.jira_list{
+    display: flex;
+    gap: 16px;
+    width: 100%;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.jira_cards{
+    height: 90px;
+    width: 173px ;
+    min-width: 173px;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.jira_title{
+    text-align: center;
+    line-height: 3.75rem;
+    font-size: 3.125rem;
+    /* margin: 32px 0; */
+}
+
+.jira_block{
+    position: relative;
+    font-weight: 800;
+    animation: JiraAnimate ;
+}
+
+.jira_bg_absolute{
+    position: absolute;
+    inset-block-end: -24.5%;
+    width: 100%;
+    left: 0;
+    animation-name: jiraBg;
+    animation-duration: .7s;
+    animation-delay: .5s;
+    animation-iteration-count: 1;
+    z-index: -1;
+    animation-fill-mode: forwards;
+    word-break: break-word;
+}
+
+.jira_link_block{
+    display: flex;
+    justify-content: center;
+    margin: 30px 0 40px;
+}
+
+.jira_link{
+    min-height: 44px;
+    padding: 10px 24px;
+    line-height: 1.5rem;
+    font-size: 1.25rem;
+    border-radius: 40px;
+    font-weight: 500;
+    background-color: #1868db;
+    color: #fff
+}
+
+.jira_vid_img_block{
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.jira_vid_block , .jira_img{
+    border: 3px solid #f0f1f2;
+    border-radius: 5px;
+    aspect-ratio: 16 / 9;
+    margin-block-end: 8%;
+}
+
+.jira_bg{
+    position: absolute;
+    clip-path: polygon(.5% 0, 50% 0, 50% 10%, 98.5% 0, 100% 85%, 17.75% 100%, 17.25% 85%, 0 85%);
+    width: calc(100% + 200px);
+    inset-inline-start: -50px;
+    inset-block-start: 45%;
+    height: 55%;
+    z-index: -1;
+    background-color: #1868db;
+}
+
+.jira_active{
+    border: 1px solid #101214;
+    font-weight: 700;
+    border-radius: 6px;
+}
+
+.jira_bg_absolute {
+    opacity: 0;
+    /* Animatsiya avtomatik ishlamaydi */
+  }
+  
+  /* IntersectionObserver orqali qo'shiladigan class */
+  .jira_bg_absolute.in-view {
+    animation: jiraBg 0.5s forwards;
+  }
+  
+  /* Elementga qayta kirish animatsiyasi uchun */
+  .jira_bg_absolute.in-view.was-out {
+    animation: none; /* Avval animatsiyani o'chiramiz */
+  }
+  
+  /* Kichik kechikish bilan animatsiyani qayta ishga tushiramiz */
+  .jira_bg_absolute.in-view:not(.animating) {
+    animation: none;
+  }
+  
+  .jira_bg_absolute.in-view.animating {
+    animation: jiraBg 0.5s forwards;
+  }
+
+  @keyframes jiraBg {
+    0% {
+        opacity: 0;
+        transform: translateX(-30%);
+    }
+    
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+  }
+
+  @media (min-width:768px) {
+    .jira{
+        padding: 0 60px;
+    }
+    .jira_title{
+        font-size: 3.75rem;
+        line-height: 4.375rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+
+  }

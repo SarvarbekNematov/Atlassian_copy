@@ -1,0 +1,369 @@
+.team_work{
+    padding: 0 32px;
+}
+
+.teamwork_block{
+    text-align: center;
+    padding: 42px 0 20px;
+    position: relative;
+}
+
+.teamwork_title{
+    text-align: center;
+    line-height: 2.375rem;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.teamwork_card{
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.teamwork_jira_img{
+    display: block;
+    margin: 0 auto;
+    width: 56.3px;
+    height: 24px;
+}
+
+.teamwork_subtitle{
+    font-weight: 700;
+    line-height: 1.875rem;
+    font-size: 1.5rem;
+    color: #101214;
+}
+
+.teamwork_desc{
+    min-width: 304px;
+    line-height: 1.625rem;
+    font-size: 1.125rem;
+    margin: 12px 0 18px;
+}
+.teamwork_btn_block{
+    display: block;
+}
+
+.teamwork_btn{
+    text-align: center;
+    background-color: #1868db;
+    padding: 10px 24px;
+    border-radius: 40px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.teamwork_link{
+    color: #803FA5;
+    cursor: pointer;
+}
+
+.teamwork_links_block{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.teamwork_mini_card{
+    padding: 30px 20px;
+    max-width: 450px;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    box-shadow: 0 0 1px 0 rgba(9, 30, 66, .31), 0 1px 1px 0 rgba(9, 30, 66, .25);
+    border-radius: 20px;
+    gap: 16px;
+}
+
+.teamwork_mini_img{
+    align-items: center;
+    width: 68px;
+    height: 68px;
+}
+.teamwork_mini_desc{
+    text-align: left;
+    line-height: 24px;
+    font-size: 16px;
+}
+.teamwork_mini_desc_link{
+    color: #1868db;
+    text-underline-offset: 0.125rem;
+}
+.teamwork_confluence_img{
+    display: block;
+    margin: 0 auto;
+    width: 134px;
+    height: 24px;
+}
+.teamwork_service_management_img{
+    display: block;
+    margin: 0 auto;
+    width: 271px;
+    height: 24px;
+}
+.teamwork_link_service_management{
+    color: #1868DB;
+    cursor: pointer;
+}
+.teamwork_img{
+    margin: 30px 0 40px;
+    padding: 15px;
+    position: relative;
+}
+.teamwork_relative{
+    position: absolute;
+    inset-inline-start: 21px;
+    inset-block-start: -19px;
+    top: 55%;
+    z-index: -1;
+    animation: bgImg .5s ease-in-out 
+}
+.teamwork_img_absolute_one{
+    position: absolute;
+    width: 19px;
+    height: 19px;
+    aspect-ratio: 37 / 36;
+    inset-block-start: -45px;
+    inset-inline-start: 62.7%;
+    animation: fadeIn 0.2s ease-out 0.2s forwards;
+}
+.teamwork_img_absolute_two{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    aspect-ratio: 37 / 36;
+    inset-block-start: -30px;
+    inset-inline-start: 55.7%;
+    animation: fadeIn 0.2s ease-out 0.4s forwards;
+}
+.teamwork_img_absolute_three{
+    position: absolute;
+    width: 37px;
+    height: 36px;
+    aspect-ratio: 37 / 36;
+    inset-block-start: -15px;
+    inset-inline-start: 62.7%;
+    animation: fadeIn 0.2s ease-out 0.6s forwards;
+}
+
+.teamwork_service_discovery_block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.teamwork_service_discovery_img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 271px;
+    height: 24px;
+}
+
+.teamwork_animate {
+    opacity: 0;
+    /* Animatsiya avtomatik ishlamaydi */
+  }
+  
+  /* IntersectionObserver orqali qo'shiladigan class */
+  .teamwork_animate.in-view {
+    animation: fadeIn 0.5s forwards;
+  }
+  
+  /* Elementga qayta kirish animatsiyasi uchun */
+  .teamwork_animate.in-view.was-out {
+    animation: none; /* Avval animatsiyani o'chiramiz */
+  }
+  
+  /* Kichik kechikish bilan animatsiyani qayta ishga tushiramiz */
+  .teamwork_animate.in-view:not(.animating) {
+    animation: none;
+  }
+  
+  .teamwork_animate.in-view.animating {
+    animation: fadeIn 0.5s forwards;
+  }
+
+  .teamwork_desctop_container{
+    display: none;
+  }
+
+  @keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    
+    100% {
+        opacity: 1;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .team_work{
+        padding: 0 60px;
+    }
+    .teamwork_title{
+        font-size: 2.25rem;
+        line-height: 2.625rem;
+    }
+    .teamwork_links_block{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-bottom: 40px;
+        margin-top: 30px;
+    }
+  }
+
+@media (min-width: 1024px) {
+    .teamwork_block{
+        padding: 64px 0 54px;
+    }
+    .teamwork_desctop_container{
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        height: 100vh;
+        overflow-y: auto;
+        position: relative;
+    }
+    .teamwork_container{
+        display: none   ;
+    }
+    .teamwork_desctop_list{
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        max-width: 450px;
+        position: relative;
+        flex: 1;
+        padding-bottom: 200px;
+    }
+    .desctop_item{
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        margin-bottom: 150px;
+    }
+    .desctop_item_logo{
+        display: flex;
+        justify-content: left;
+    }
+    .desctop_item_logo0 svg{
+        width: 56px;
+        height: 24px;
+        margin-bottom: 10px;
+    }
+    .desctop_item_logo1 svg{
+        width: 134px;
+        height: 24px;
+        margin-bottom: 10px;
+    }
+    .desctop_item_logo2 svg{
+        width: 271px;
+        height: 24px;
+        margin-bottom: 10px;
+    }
+    .desctop_item_logo3 svg{
+        width: 238px;
+        height: 24px;
+        margin-bottom: 10px;
+    }
+    .desctop_item_title{
+        font-size: 2rem;
+        line-height: 2.375rem;
+        font-weight: 670;
+    }
+    .desctop_item_desc_block{
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+        padding: 12px 30px 20px 0;
+    }
+    .desctop_link_block{
+        display: flex;
+        gap: 20px;
+        align-items: center;
+    }
+    .desctop_fist_link{
+        display: flex;
+        justify-content: center;
+        padding: 6px 24px;
+        background-color: #1868db;
+        color: #fff;
+        line-height: 20px;
+        font-size: 1pc;
+        border-radius: 40px;
+    }
+    .desctop_second_link{
+        color: #803FA5;
+    }
+    .desctop_card{
+        display: flex;
+        align-items: center;
+        box-shadow: 0 0 1px 0 rgba(9, 30, 66, .31), 0 1px 1px 0 rgba(9, 30, 66, .25);
+        padding: 30px 20px;
+        border-radius: 20px;
+        max-width: 450px;
+        gap: 16px   ;
+    }
+    .desctop_card_logo{
+        width: 68px ;
+        height: 68px;
+    }
+    .desctop_card_desc strong{
+        font-weight: bold;
+        font-size: 1pc;
+    }
+    .desctop_card_link{
+        color: #1868db;
+        font-size: 1pc;
+        text-underline-offset:.125rem;
+        text-decoration-line: underline;text-decoration-color: #1868db;
+    }
+    .teamwork_videos_list{
+        flex: 1;
+        position: sticky;
+        top: 50px; /* qayerdan boshlab qotib tursin */
+        /* min-width: 509px;
+        max-width: 700px; */
+    }
+    .teamwork_videos_list li{
+        width: 100%;
+    }
+    .teamwork_videos_item0{
+        position: absolute;
+        opacity: 1;
+    }
+    .teamwork_videos_item1{
+        position: absolute;
+        opacity: 0;
+    }
+    .teamwork_videos_item2{
+        position: absolute;
+        opacity: 0;
+    }
+
+    /* .desctop_item {
+      opacity: 0;
+    }
+    
+    .desctop_item.in-view {
+      animation: fadeIn 0.5s forwards;
+    }
+    
+    .desctop_item.in-view.was-out {
+      animation: none; 
+    }
+    
+    .desctop_item.in-view:not(.animating) {
+      animation: none;
+    }
+    
+    .desctop_item.in-view.animating {
+      animation: fadeIn 0.5s forwards;
+    }
+
+    .desctop_item{
+      display: none;
+    } */
+}

@@ -18,25 +18,25 @@ const Footer = () => {
               <SubLogo />
             </span>
             <ul className="footer_item_block">
-              <li>
+              <li className="footer_text">
                 <a href="">Company</a>{" "}
               </li>
-              <li>
+              <li className="footer_text">
                 <a href="">Careers</a>{" "}
               </li>
-              <li>
+              <li className="footer_text">
                 <a href="">Events</a>{" "}
               </li>
-              <li>
+              <li className="footer_text">
                 <a href="">Blogs</a>{" "}
               </li>
-              <li>
+              <li className="footer_text">
                 <a href="">Investor Relations</a>{" "}
               </li>
-              <li>
+              <li className="footer_text">
                 <a href="">Attlasian Foundation</a>{" "}
               </li>
-              <li>
+              <li className="footer_text">
                 <a href="">Contact us</a>{" "}
               </li>
             </ul>

@@ -23,7 +23,20 @@
     gap: 16px;
 }
 .footer_item_block li{
+    cursor: pointer;
+    opacity: .6;
     font-size: .875rem;
+}
+.footer_text{
+    opacity: 1;
+    font-weight: 700;
+}
+.footer_item_block li:hover{
+    text-decoration-style: solid;
+    text-decoration-line: underline;
+    text-decoration-color: currentColor;
+    color: #101214;
+    opacity: 1;
 }
 .footer_logo_block{
     display: block;

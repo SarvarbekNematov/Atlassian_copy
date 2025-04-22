@@ -12,120 +12,120 @@ const Footer = () => {
   return (
     <div className="footer">
       <div className="footer_block">
-        <ul className="footer_list">
-          <li>
+        <div className="footer_list">
+          <div>
             <span className="footer_logo_block">
               <SubLogo />
             </span>
-            <div className="footer_item_block">
-              <strong>
+            <ul className="footer_item_block">
+              <li>
                 <a href="">Company</a>{" "}
-              </strong>
-              <strong>
+              </li>
+              <li>
                 <a href="">Careers</a>{" "}
-              </strong>
-              <strong>
+              </li>
+              <li>
                 <a href="">Events</a>{" "}
-              </strong>
-              <strong>
+              </li>
+              <li>
                 <a href="">Blogs</a>{" "}
-              </strong>
-              <strong>
+              </li>
+              <li>
                 <a href="">Investor Relations</a>{" "}
-              </strong>
-              <strong>
+              </li>
+              <li>
                 <a href="">Attlasian Foundation</a>{" "}
-              </strong>
-              <strong>
+              </li>
+              <li>
                 <a href="">Contact us</a>{" "}
-              </strong>
-            </div>
-          </li>
-          <li>
+              </li>
+            </ul>
+          </div>
+          <div>
             <strong className="footer_title">
               <a href="">PRODUCTS</a>{" "}
             </strong>
-            <div className="footer_item_block">
-              <p>
+            <ul className="footer_item_block">
+              <li>
                 <a href="">Rovo</a>{" "}
-              </p>
-              <p>
+              </li>
+              <li>
                 <a href="">Jira</a>{" "}
-              </p>
-              <p>
+              </li>
+              <li>
                 <a href="">Jira Align</a>{" "}
-              </p>
-              <p>
+              </li>
+              <li>
                 <a href="">Jira Service Management</a>{" "}
-              </p>
-              <p>
+              </li>
+              <li>
                 <a href="">Confluence</a>{" "}
-              </p>
-              <p>
+              </li>
+              <li>
                 <a href="">Trello</a>{" "}
-              </p>
-              <p>
+              </li>
+              <li>
                 <a href="">Bitbucket</a>{" "}
-              </p>
-            </div>
+              </li>
+            </ul>
             <p className="footer_link">
               <a href="">See all products</a>{" "}
             </p>
-          </li>
-          <li>
+          </div>
+          <div>
             <strong className="footer_title">
               <a href="">RESOURCES</a>{" "}
             </strong>
-            <div className="footer_item_block">
-              <p>
+            <ul className="footer_item_block">
+              <li>
                 <a href="">Technical support</a>{" "}
-              </p>
-              <p>
+              </li>
+              <li>
                 <a href="">Purchasing & licensing</a>{" "}
-              </p>
-              <p>
+              </li>
+              <li>
                 <a href="">Atlassian Community</a>{" "}
-              </p>
-              <p>
+              </li>
+              <li>
                 <a href="">Knowledge base</a>{" "}
-              </p>
-              <p>
+              </li>
+              <li>
                 <a href="">Marketplace</a>{" "}
-              </p>
-              <p>
+              </li>
+              <li>
                 <a href="">My account</a>{" "}
-              </p>
-            </div>
+              </li>
+            </ul>
             <p className="footer_link">
               <a href="">Create support ticket</a>{" "}
             </p>
-          </li>
-          <li>
+          </div>
+          <div>
             <strong className="footer_title">
               <a href="">LEARN</a>{" "}
             </strong>
-            <div className="footer_item_block">
-              <p>
+            <ul className="footer_item_block">
+              <li>
                 <a href="">Partners</a>{" "}
-              </p>
-              <p>
+              </li>
+              <li>
                 <a href="">Training & certification</a>{" "}
-              </p>
-              <p>
+              </li>
+              <li>
                 <a href="">Documentation</a>{" "}
-              </p>
-              <p>
+              </li>
+              <li>
                 <a href="">Developer resources</a>{" "}
-              </p>
-              <p>
+              </li>
+              <li>
                 <a href="">Enterprise services</a>{" "}
-              </p>
-            </div>
+              </li>
+            </ul>
             <p className="footer_link">
               <a href="">See all resources</a>{" "}
             </p>
-          </li>
-        </ul>
+          </div>
+        </div>
       </div>
       <div className="footer_end_block">
         <p className="footer_end_title">Copyright © 2025 Atlassian</p>

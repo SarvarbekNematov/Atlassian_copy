@@ -7,25 +7,20 @@ const Unleash = () => {
     threshold: 0.5,
   });
 
-  // Animatsiya bo'lganligini kuzatish uchun ref
   const elementRef = useRef<HTMLDivElement | null>(null);
   useEffect(() => {
     if (!elementRef.current) return;
 
     if (isIntersecting) {
-      // Element ko'rinish maydoniga kirganda
       elementRef.current.classList.add("in-view");
 
-      // Animatsiyani qayta ishga tushirish uchun
       elementRef.current.classList.remove("animating");
-      // Kichik kechikish bilan class qo'shish orqali animatsiyani yangilash
       setTimeout(() => {
         if (elementRef.current) {
           elementRef.current.classList.add("animating");
         }
       }, 10);
     } else {
-      // Element ko'rinish maydonidan chiqqanda
       elementRef.current.classList.remove("in-view");
       elementRef.current.classList.remove("animating");
     }

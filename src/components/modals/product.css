@@ -1,0 +1,114 @@
+.modal_products{
+    display: none;
+}
+
+@media (min-width: 1024px) {
+    .modal_product_container{
+        display: flex;
+        justify-content: center;
+    }
+    .modalActive{
+        display: flex;
+        position: absolute;
+        z-index: 2;
+        background-color: #fff;
+        width: 912px;
+        top: 70px;
+        box-shadow: 0 0 1px 0 #DDDEE1, 0 5px 20px -5px rgba(0, 0, 0, .1);
+        border-radius: 15px;
+    }
+    .modal_active_list{
+        display: flex;
+        flex-direction: column;
+        padding-top: 40px;
+        width: 14pc;
+        background-color: #f8f8f8;
+        height: 100%;
+        padding-left: 2.5rem;
+    }
+    .modal_active_item{
+        padding: 12px 32px 12px 16px;
+        cursor: pointer;
+        font-weight: 700;
+        border-radius: .5rem 0 0 .5rem;
+        font-size: 14px;
+        cursor: pointer;
+    }
+    .modal_active_item button{
+        cursor: pointer;
+    }
+
+    .modal_active_item:hover{
+        color: #1868DB;
+        transition: .35s;
+    }
+    .modal-product-sub-list{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 40px 40px 40px 32px;
+        column-gap: 2rem;
+    }
+    .modal-product-sub-item{
+        width: 280px;
+        padding: 24px 0;
+        display: flex;
+        cursor: pointer;
+    }
+    .modal-product-icon-block{
+        background-color: #F0F1F2;
+        border-radius: 4px;
+        width: 44px;
+        height: 44px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: .75rem;
+    }
+    .modal-product-title{
+        font-weight: 700;
+        font-size: 14px;
+
+    }
+
+    .modal-product-title:hover{
+        color: #1868DB;
+    }
+
+    .modal-product-desc{
+        font-size: 9pt;
+        color: #505258;
+    }
+    .modal-product-new{
+        background-color: #cfe1fd;
+        border-radius: 24px;
+        padding: 2px 6px;
+        font-size: 10px;
+        font-weight: 700;
+        color: #09326c;
+        font-family: 'Charlie text';
+        margin-left: 5px;
+    }
+    .modal-product-new:hover{
+        color: #09326c;
+    }
+
+    .activeLink{
+        color: #1868DB;
+        background-color: #fff;
+        border-radius: .5rem 0 0 .5rem;
+    }
+    .links_a{
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 14px;
+        color: #1868DB;
+        padding-left: 15px;
+        margin-top: 100px;
+        padding-bottom: 50px;
+    }
+    .links_a svg{
+        width: 14px;
+        height: 10px;
+    }
+}

@@ -32,33 +32,15 @@ const Dashboard = () => {
             <img src="https://wac-cdn-bfldr.atlassian.com/K3MHR9G8/at/mwhwnwgxjkp87psgkztmgv/gwp-5421-illustration.png?auto=webp" alt="" />
           </div>  
         </div>          
-        <div>
           <Jira/>
-        </div>
-        <div className="TeamWork">
           <TeamWork/>
-        </div>
-        <div className="Rovo">
           <Rovo/>
-        </div>
-        <div className="GlobeAtlassian">
           <GlobeAtlassian/>
-        </div>
-        <div className="Empower">
           <Empower/>
-        </div>
-        <div className="Templates">
           <Template/>
-        </div>
-        <div className="Customers">
           <Customer/>
-        </div>
-        <div className="Story">
           <Story/>
-        </div>
-        <div className="Unleash">
           <Unleash/>
-        </div>
       </div>
     </div>
   );

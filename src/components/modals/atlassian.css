@@ -1,0 +1,53 @@
+.modal_atlassian{
+    display: none;
+}
+
+@media (min-width:1024px) {
+    .atlassian_modal_active{
+        display: flex;
+        justify-content: center;
+    }
+
+    .atlassian_active{
+        display: flex;
+        position: absolute;
+        z-index: 2;
+        background-color: #fff;
+        width: 912px;
+        top: 70px;
+        box-shadow: 0 0 1px 0 #DDDEE1, 0 5px 20px -5px rgba(0, 0, 0, .1);
+        border-radius: 15px;
+    }
+    .atlassian_list{
+        padding: 40px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        row-gap: 2.5rem;
+        column-gap: 2rem;
+    }
+    .atlassian_title{
+        font-size: 1rem;
+        line-height: 1.5rem;
+        font-weight: 700;
+        letter-spacing: .03em;
+    }
+
+    .atlassian_title:hover{
+        color: #1868DB;
+    }
+
+    .atlassian_desc{
+        font-size: 11.5px;
+        letter-spacing: 0;
+        color: #505258;
+    }
+    .atlassian_new{
+        font-size: 10px;
+        vertical-align: middle;
+        border-radius: 24px;
+        background-color: #cfe1fd;
+        color: #09326C;
+        padding: 2px 6px;
+        margin-left: 10px;
+    }
+}

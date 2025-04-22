@@ -21,6 +21,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
 .jira_title{
@@ -54,6 +55,13 @@
     display: flex;
     justify-content: center;
     margin: 30px 0 40px;
+}
+
+.jira_sub_title{
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 400;
+    font-family: 'Charlie Display';
 }
 
 .jira_link{
@@ -147,5 +155,15 @@
   }
 
   @media (min-width: 1024px) {
-
+    .jira_list{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .jira_link_block{
+        margin: 30px 0 40px;
+    }
+    .jira_title{
+        padding: 19px 0;
+    }
   }

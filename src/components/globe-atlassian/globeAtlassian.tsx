@@ -11,7 +11,6 @@ const GlobeAtlassian = () => {
     const section200Ref = useRef<HTMLDivElement | null>(null);
     const section80Ref = useRef<HTMLDivElement | null>(null);
     
-    // Animatsiyani kuzatish uchun IntersectionObserver
     useEffect(() => {
       const options: IntersectionObserverInit = {
         root: null,
@@ -22,7 +21,6 @@ const GlobeAtlassian = () => {
       const handleIntersect = (entries: IntersectionObserverEntry[], observer: IntersectionObserver) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            // Element ko'rinishiga qarab animatsiyani boshlash
             if (entry.target === section300kRef.current) {
               animateCounter(0, 300000, 2000, setCount300k);
             } else if (entry.target === section200Ref.current) {
@@ -30,7 +28,6 @@ const GlobeAtlassian = () => {
             } else if (entry.target === section80Ref.current) {
               animateCounter(0, 80, 1500, setCount80);
             }
-            // Animatsiya bir marta ishlashi uchun kuzatishni to'xtatish
             observer.unobserve(entry.target);
           }
         });
@@ -49,7 +46,6 @@ const GlobeAtlassian = () => {
       };
     }, []);
     
-    // Son animatsiyasini bajarish uchun funksiya
     const animateCounter = (
       start: number, 
       end: number, 
@@ -64,7 +60,6 @@ const GlobeAtlassian = () => {
         const remaining: number = Math.max(0, endTime - now);
         const progress: number = 1 - remaining / duration;
         
-        // Son qiymatini hisoblash (easing bilan)
         const value: number = Math.floor(start + easeOutQuad(progress) * (end - start));
         
         setterFunction(value);
@@ -72,19 +67,17 @@ const GlobeAtlassian = () => {
         if (remaining > 0) {
           requestAnimationFrame(runAnimation);
         } else {
-          setterFunction(end); // Aniq oxirgi qiymatni belgilash
+          setterFunction(end); 
         }
       };
       
       runAnimation();
     };
     
-    // Easing funksiyasi (yumshoq tugash uchun)
     const easeOutQuad = (x: number): number => {
       return 1 - (1 - x) * (1 - x);
     };
     
-    // Son formatlash funksiyasi (vergul bilan ajratish)
     const formatNumber = (num: number): string => {
       return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
     };
@@ -93,31 +86,25 @@ const GlobeAtlassian = () => {
       threshold: 0.5,
     });
   
-    // Animatsiya bo'lganligini kuzatish uchun ref
     const elementRef = useRef<HTMLSpanElement  | null>(null);
     useEffect(() => {
       if (!elementRef.current) return;
   
       if (isIntersecting) {
-        // Element ko'rinish maydoniga kirganda
         elementRef.current.classList.add("in-view");
   
-        // Animatsiyani qayta ishga tushirish uchun
         elementRef.current.classList.remove("animating");
-        // Kichik kechikish bilan class qo'shish orqali animatsiyani yangilash
         setTimeout(() => {
           if (elementRef.current) {
             elementRef.current.classList.add("animating");
           }
         }, 10);
       } else {
-        // Element ko'rinish maydonidan chiqqanda
         elementRef.current.classList.remove("in-view");
         elementRef.current.classList.remove("animating");
       }
     }, [isIntersecting]);
   
-    // Qolgan render kodlari
   return (
     <div className="section_globe">
       <div className="globe">
@@ -139,7 +126,7 @@ const GlobeAtlassian = () => {
           </div>
           <div className="globe_sub_block">
             <div ref={section200Ref} className="globe_lining_block">
-              <span className="plusIcon">{count200}+</span>
+              <span className="plusIcon media_plusicon">{count200}+</span>
               <p className="globe_sub_desc">
                 countries have companies that use Atlassian
               </p>

@@ -22,7 +22,7 @@
     flex-direction: column;
     gap: 16px;
 }
-.footer_item_block p{
+.footer_item_block li{
     font-size: .875rem;
 }
 .footer_logo_block{

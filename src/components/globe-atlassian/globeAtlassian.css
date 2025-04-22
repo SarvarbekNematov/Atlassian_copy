@@ -78,7 +78,6 @@
     aspect-ratio: 1 / 1;
     transform: translateY(-9%) rotate(142deg);
 }
-
 .circularIcon{
     width: 113px;
     height: 110px;
@@ -97,6 +96,11 @@
 }
 
 @media (min-width:768px) {
+    .section_globe{
+        padding-top: 30px;
+        clip-path: polygon(0 0, 86% 3%, 86% 6%, 100% 5%, 100% 93%, 19.2% 100%, 19% 84%, 0 84%);
+        max-width: 90pc;    
+    }
     .globe_block{
         display: flex;
         flex-direction: row;
@@ -105,43 +109,84 @@
     .globe_double_block{
         display: flex;
         flex-direction: row;
+        align-items: center;
     }
     .globe_sub_block{
         padding: 0 40px 0 0;
     }
     .globe{
-        margin-bottom: 100px;
+        margin-bottom: 60px;
+        padding: 60px 60px 60px;
     }
-    .globe_img_sub_block{
-        transform: rotate(33deg);
-        inset-block-start: -7%;
-        inset-inline-start: 10%;
-        width: 20rem;
-        z-index: -1;
+    .globe_title{
+        line-height: 2.625rem;
+        font-size: 2.25rem;
     }
-    .globe_img{
-        max-width: 100%;
+    .plusIcon{
+        font-size: 4rem;
+        font-family: 'Charlie Display';
     }
-    .globe_img_block{
-        display: flex;
-        flex-direction: row-reverse;
+    .globe_title_block{
+        max-width: 520px;
+    }
+    .globe_desc{
+        line-height: 1.5rem;
+        font-size: 1rem;
+    }
+    .media_plusicon{
+        font-size: 3rem;
     }
     .lightningIcon{
         display: block;
-        margin-top: 80%;
+        margin-top: 50%;
         margin-left: -30%;
     }
     .circularIcon{
         position: absolute;
         z-index: 2;
-        left: 60%;
+        left: 80%;
         top: 20%;
     }
-    .globe{
-        padding: 60px 60px 0;
+    .globe_img_block{
+        display: flex;
+        flex-direction: row-reverse;
+        aspect-ratio: 1 / 1;
     }
-    .section_globe{
-        padding-top: 30px;
-        clip-path: polygon(0 0, 86% 3%, 86% 6%, 100% 5%, 100% 93%, 19.2% 100%, 19% 84%, 0 84%);
+    .globe_img_sub_block{
+        transform: none;
+        width: 308px;
+        inset-block-start: -17%;
+        inset-inline-start: 0%;
+        z-index: -1;
+    }
+    .globe_img {
+        width: 100%;
+        height: auto;
+        transform: rotate(33deg);
+    }
+
+}
+@media (min-width:1024px) {
+    .globe_block{
+        justify-content: left;
+    }
+    .globe_img_sub_block{
+        width: 300px;
+    }
+    .globe_title{
+        margin-bottom: 15px;
+        font-size: 2.5rem;
+        line-height: 3rem;
+    }
+    .globe_sub_block{
+        max-width: 300px;
+    }
+    .plusIcon{
+        margin-top: 10px;
+        margin-bottom: 8px;
+    }
+    .foizIcon{
+        font-size: 3rem;
+        font-family: 'Charlie Display';
     }
 }

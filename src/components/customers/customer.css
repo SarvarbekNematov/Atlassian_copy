@@ -107,9 +107,14 @@
     justify-content: center;
     align-items: center;
     margin: 0 auto;
+    opacity: .6;
+}
+.customer_item button{
+    cursor: pointer;
 }
 .customer_active{
     border-top: 2.5px solid #fff;
+    opacity: 1;
 }
 .customer_card_link{
     cursor: pointer;

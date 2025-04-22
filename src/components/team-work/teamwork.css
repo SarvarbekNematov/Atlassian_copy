@@ -7,33 +7,29 @@
     padding: 42px 0 20px;
     position: relative;
 }
-
 .teamwork_title{
     text-align: center;
     line-height: 2.375rem;
     font-size: 2rem;
     font-weight: 700;
+    font-family: 'Charlie Display';
 }
-
 .teamwork_card{
     text-align: center;
     margin-bottom: 60px;
 }
-
 .teamwork_jira_img{
     display: block;
     margin: 0 auto;
     width: 56.3px;
     height: 24px;
 }
-
 .teamwork_subtitle{
     font-weight: 700;
     line-height: 1.875rem;
     font-size: 1.5rem;
     color: #101214;
 }
-
 .teamwork_desc{
     min-width: 304px;
     line-height: 1.625rem;
@@ -42,8 +38,8 @@
 }
 .teamwork_btn_block{
     display: block;
+    margin-top: 9px;
 }
-
 .teamwork_btn{
     text-align: center;
     background-color: #1868db;
@@ -52,29 +48,26 @@
     color: #fff;
     cursor: pointer;
 }
-
 .teamwork_link{
     color: #803FA5;
     cursor: pointer;
 }
-
 .teamwork_links_block{
     display: flex;
     flex-direction: column;
     gap: 16px;
 }
-
 .teamwork_mini_card{
     padding: 30px 20px;
     max-width: 450px;
     display: flex;
     align-items: center;
     margin: 0 auto;
+    margin-top: 32px;
     box-shadow: 0 0 1px 0 rgba(9, 30, 66, .31), 0 1px 1px 0 rgba(9, 30, 66, .25);
     border-radius: 20px;
     gap: 16px;
 }
-
 .teamwork_mini_img{
     align-items: center;
     width: 68px;
@@ -87,6 +80,7 @@
 }
 .teamwork_mini_desc_link{
     color: #1868db;
+    text-decoration-line: underline;
     text-underline-offset: 0.125rem;
 }
 .teamwork_confluence_img{
@@ -100,23 +94,31 @@
     margin: 0 auto;
     width: 271px;
     height: 24px;
+    
 }
 .teamwork_link_service_management{
     color: #1868DB;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .teamwork_img{
-    margin: 30px 0 40px;
+    margin: 30px 0 0;
     padding: 15px;
+    padding-bottom: 40px;
     position: relative;
 }
 .teamwork_relative{
     position: absolute;
-    inset-inline-start: 21px;
-    inset-block-start: -19px;
-    top: 55%;
+    left: -10px;
+    bottom: 20px;
     z-index: -1;
     animation: bgImg .5s ease-in-out 
+}
+.team_img_big{
+    border: 3px solid #F0F1F2;
+    border-radius: 5px;
 }
 .teamwork_img_absolute_one{
     position: absolute;
@@ -126,6 +128,13 @@
     inset-block-start: -45px;
     inset-inline-start: 62.7%;
     animation: fadeIn 0.2s ease-out 0.2s forwards;
+}
+.teamwork_link_service_management svg{
+    width: 13px;
+    height: 8px;
+    margin-left: 3px;
+    margin-top: 3px;
+    color: #1868DB;
 }
 .teamwork_img_absolute_two{
     position: absolute;
@@ -162,20 +171,16 @@
 
 .teamwork_animate {
     opacity: 0;
-    /* Animatsiya avtomatik ishlamaydi */
   }
   
-  /* IntersectionObserver orqali qo'shiladigan class */
   .teamwork_animate.in-view {
     animation: fadeIn 0.5s forwards;
   }
   
-  /* Elementga qayta kirish animatsiyasi uchun */
   .teamwork_animate.in-view.was-out {
     animation: none; /* Avval animatsiyani o'chiramiz */
   }
   
-  /* Kichik kechikish bilan animatsiyani qayta ishga tushiramiz */
   .teamwork_animate.in-view:not(.animating) {
     animation: none;
   }
@@ -212,6 +217,13 @@
         justify-content: center;
         margin-bottom: 40px;
         margin-top: 30px;
+    }
+    .teamwork_relative{
+        left: -30px;
+        bottom: 5px;
+    }
+    .teamwork_relative_confluence{
+        bottom: 5px;
     }
   }
 
@@ -323,9 +335,7 @@
     .teamwork_videos_list{
         flex: 1;
         position: sticky;
-        top: 50px; /* qayerdan boshlab qotib tursin */
-        /* min-width: 509px;
-        max-width: 700px; */
+        top: 50px; 
     }
     .teamwork_videos_list li{
         width: 100%;
@@ -342,28 +352,4 @@
         position: absolute;
         opacity: 0;
     }
-
-    /* .desctop_item {
-      opacity: 0;
-    }
-    
-    .desctop_item.in-view {
-      animation: fadeIn 0.5s forwards;
-    }
-    
-    .desctop_item.in-view.was-out {
-      animation: none; 
-    }
-    
-    .desctop_item.in-view:not(.animating) {
-      animation: none;
-    }
-    
-    .desctop_item.in-view.animating {
-      animation: fadeIn 0.5s forwards;
-    }
-
-    .desctop_item{
-      display: none;
-    } */
 }

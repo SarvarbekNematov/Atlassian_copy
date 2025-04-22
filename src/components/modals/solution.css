@@ -1,0 +1,55 @@
+.modal_slution{
+    display: none;
+}
+
+
+@media (min-width: 1024px) {
+    .modal_slution{
+        display: flex;
+        justify-content: center;
+    }
+    .solution_block{
+        display: none;
+    }
+    .activeSolution{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        z-index: 2;
+        background-color: #fff;
+        width: 912px;
+        top: 70px;
+        box-shadow: 0 0 1px 0 #DDDEE1, 0 5px 20px -5px rgba(0, 0, 0, .1);
+        border-radius: 15px;
+    }
+    .solution_sub_block{
+        padding: 2.5rem;
+    }
+    .solution_box{
+        align-items: center;
+        padding-bottom: 0px !important;
+    }
+    .solution_list{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 1.5rem;    
+    }
+    .solution_footer{
+        background-color: #f8f8f8;
+        padding: 2.5rem;
+    }
+    .solution_title{
+        display: block;
+        font-size: .75rem;
+        line-height: 1rem;
+        font-weight: 700;
+        color: #101214;
+        padding-bottom: 30px;
+        font-family: 'Charlie Display';
+    }
+    .solution_item li{
+        font-size: .875rem;
+        height: 40px;
+        cursor: pointer;
+    }
+}

@@ -29,7 +29,15 @@
     padding: 1.25rem;
     background-color: #f8f8f8;
     border-radius: 20px;
+    cursor: pointer;
+    height: 175px;
 }
+
+.featured_card:hover{
+    box-shadow: 0 8px 9pt 0 #091e4226, 0 0 1px 0 #091e424f;
+    transition: box-shadow .25s;
+}
+
 .featured_icon_block svg{
     width: 163px;
     height: 40px;
@@ -76,6 +84,13 @@
     line-height: 1.5rem;
 }
 .featured-link{
+    display: flex;
+    align-items: center;
+    gap: 3px;
     color: #1868DB;
     font-size: .875rem;
+}
+.featured-link svg{
+    width: 14px;
+    height: 10px;
 }

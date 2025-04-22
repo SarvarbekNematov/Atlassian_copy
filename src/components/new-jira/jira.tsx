@@ -2,57 +2,15 @@ import { useEffect, useRef, useState } from "react";
 import { JiraBottomImg } from "../../assets/icons";
 import "./jira.css";
 import { useIntersectionObserver } from "usehooks-ts";
+import { JiradataAll } from "../../data";
 
-const dataAll = [
-  {
-    icons:
-      "https://wac-cdn-bfldr.atlassian.com/K3MHR9G8/at/j9r7crv6mz8g566kwqh9zv5/software.svg",
-    title: "Software",
-    img: "https://wac-cdn-bfldr.atlassian.com/K3MHR9G8/at/8s4fkfnvtcv5xrbj39vst2c/Jira-Board-Software-3233077719.webp?auto=webp",
-    id: 1,
-  },
-  {
-    id: 2,
-    img: "https://wac-cdn-bfldr.atlassian.com/K3MHR9G8/at/j9x4n5kzxffpvvv7fwbs7chr/wac-hero-jpd-1156977422.webp?auto=webp",
-    icons:
-      "https://wac-cdn-bfldr.atlassian.com/K3MHR9G8/at/tvm6cp9vpg8v9t8fkx4fjg7k/prod-management.svg",
-    title: "Product management",
-  },
-  {
-    id: 3,
-    img: "https://wac-cdn-bfldr.atlassian.com/K3MHR9G8/at/r5j6vhttwxqgn6z67bjr/Jira-Calendar-Marketing-4146978900.webp?auto=webp",
-    title: "Marketing",
-    icons:
-      "https://wac-cdn-bfldr.atlassian.com/K3MHR9G8/at/vx2wsv5v63s6q83q7kpq8m7g/marketing.svg",
-  },
-  {
-    id: 4,
-    img: "https://wac-cdn-bfldr.atlassian.com/K3MHR9G8/at/ftwm2885zt6s4smbcq344b/Jira-Timeline-Project_Management-2679766879.webp?auto=webp",
-    icons:
-      "https://wac-cdn-bfldr.atlassian.com/K3MHR9G8/at/pcj85zfcgbmqmjknc8s753hn/proj-management.svg",
-    title: "Project management",
-  },
-  {
-    id: 5,
-    img: "https://wac-cdn-bfldr.atlassian.com/K3MHR9G8/at/q96n93xq4bvbcxbscvj3njm6/Jira-List-Design-1069502226.webp?auto=webp",
-    icons:
-      "https://wac-cdn-bfldr.atlassian.com/K3MHR9G8/at/q98jrzxzgsgk7n4q33v23c3/design.svg",
-    title: "Design",
-  },
-  {
-    id: 6,
-    img: "https://wac-cdn-bfldr.atlassian.com/K3MHR9G8/at/mjhrvw6x5n566z6kw84bt8b/Jira-On-call-IT-3030871761.webp?auto=webp",
-    icons:
-      "https://wac-cdn-bfldr.atlassian.com/K3MHR9G8/at/2whn29rt5pf356jzcs5nbz/it.svg",
-    title: "IT",
-  },
-];
+
 
 const Jira = () => {
-  const [data, setData] = useState(dataAll.filter((i) => i.id === 1));
+  const [data, setData] = useState(JiradataAll.filter((i) => i.id === 1));
   const [activeId, setActiveId] = useState(0);
   const handleClickBtn = (id: number) => {
-    const FilteredData = dataAll.filter((i) => i.id === id);
+    const FilteredData = JiradataAll.filter((i) => i.id === id);
     setData(FilteredData);
     setActiveId(id);
   };
@@ -110,7 +68,7 @@ const Jira = () => {
         </a>
       </div>
       <ul className="jira_list">
-        {dataAll.map((i, index) => (
+        {JiradataAll.map((i, index) => (
           <li
             key={index}
             className={

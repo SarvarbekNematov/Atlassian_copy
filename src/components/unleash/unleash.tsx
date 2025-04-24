@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import { useIntersectionObserver } from "usehooks-ts";
 
 import "./unleash.css";
+
 const Unleash = () => {
   const { isIntersecting, ref } = useIntersectionObserver({
     threshold: 0.5,
@@ -28,14 +29,14 @@ const Unleash = () => {
 
   return (
     <div className="unleash">
-      <div className="unleash_block">
-        <h3 className="unleash_title">
+      <div className="unleash__wrapper">
+        <h3 className="unleash__title">
           Unleash the power of
-          <span className="unleash_teamwork ">
+          <span className="unleash__teamwork ">
             {" "}
             teamwork
             <div
-              className="unleash_img_block"
+              className="unleash__img-wrapper"
               ref={(el) => {
                 ref(el);
                 elementRef.current = el;
@@ -48,11 +49,11 @@ const Unleash = () => {
             </div>
           </span>
         </h3>
-        <p className="unleash_desc">
+        <p className="unleash__desc">
           Join millions teaming up on their best work
         </p>
-        <div className="unleash_link_block">
-          <a href="" className="unleash_link">
+        <div className="unleash__link-wrapper">
+          <a href="" className="unleash__link">
             Get started for free
           </a>
         </div>

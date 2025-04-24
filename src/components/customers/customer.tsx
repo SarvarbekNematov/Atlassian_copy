@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
-import "./customer.css";
-import { CustomerdataAll } from "../../data";
+import { CustomerData } from "../../data";
 
+import "./customer.css";
 
 const Customer = () => {
   const [activeId, setActiveId] = useState(1);
@@ -12,12 +12,12 @@ const Customer = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      const nextId = activeId >= CustomerdataAll.length ? 1 : activeId + 1;
+      const nextId = activeId >= CustomerData.length ? 1 : activeId + 1;
       setActiveId(nextId);
     }, 4500);
 
     return () => clearInterval(interval);
-  }, [activeId, CustomerdataAll]);
+  }, [activeId, CustomerData]);
 
   const [activeHeight, setActiveHeight] = useState(0);
   const activeRef = useRef<HTMLDivElement | null>(null);
@@ -36,10 +36,10 @@ const Customer = () => {
   }, [activeId]);
 
   return (
-    <div className="cutomer">
-      <div className="customer_block">
-        <h3 className="customer_title">For teams of all sizes</h3>
-        <p className="customer_desc">
+    <div className="customer">
+      <div className="customer__wrapper">
+        <h3 className="customer__title">For teams of all sizes</h3>
+        <p className="customer__desc">
           Everyone from start-ups to large enterprises prefer Atlassian
         </p>
         <a className="customer_link" href="">
@@ -47,40 +47,41 @@ const Customer = () => {
         </a>
       </div>
       
-      <div className="customer_card">
-      <div className="customer_card_container" style={{ height: activeHeight === 0 ? '840px' : activeHeight}}>
-        {CustomerdataAll.map((item) => (
+      <div className="customer__card">
+        <div className="customer__clip-container"></div>
+      <div className="customer__card-container" style={{ height: activeHeight === 0 ? '840px' : activeHeight}}>
+        {CustomerData.map((item) => (
           <div key={item.id} ref={item.id === activeId ? activeRef : null}
-          className={`customer_card_block ${
-            activeId === item.id ? "customer_card_active" : ""
+          className={`customer__card-wrapper ${
+            activeId === item.id ? "customer__card-active" : ""
           }`} >
-          <div className="customer_sub_card">
-            <div className="customer_img_block">
-              <img className="customer_img" src={item.url} alt="img" />
+          <div className="customer__sub-card">
+            <div className="customer__img-wrapper">
+              <img className="customer__img" src={item.url} alt="img" />
             </div>
-            <div className="customer_sub_block">
-              <p className="customer_sub_title">{item.title}</p>
-              <p className="customer_sub_desc">{item.desc}</p>
+            <div className="customer__sub-wrapper">
+              <p className="customer__sub-title">{item.title}</p>
+              <p className="customer__sub-desc">{item.desc}</p>
               <div>
-                <strong className="customer_name">{item.name}</strong>
-                <p className="customer_workplace">{item.workplace}</p>
+                <strong className="customer__name">{item.name}</strong>
+                <p className="customer__workplace">{item.workplace}</p>
               </div>
-              <a className="customer_card_link" href="">
-                {item.link}
+              <a className="customer__card-link" href="">
+                {item.link} 
               </a>
             </div>
           </div>
           </div>
         ))}
       </div>
-        <ul className="customer_list">
-          {CustomerdataAll.map((i) => (
+        <ul className="customer__list">
+          {CustomerData.map((i) => (
             <li
               key={i.id}
               className={
                 i.id === activeId
-                  ? "customer_item customer_active"
-                  : "customer_item"
+                  ? "customer__item customer__active"
+                  : "customer__item"
               }
             >
               <button onClick={() => handleClickBtn(i.id)}>

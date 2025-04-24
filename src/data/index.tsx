@@ -276,7 +276,7 @@ export const modalData = [
   ],
 ];
 
-export const dataArr = [
+export const TemplatedataArr = [
   {
     title: "Scrum",
     desc: "Easily plan, track, and manage work across sprints",
@@ -479,7 +479,7 @@ export const TeamworkAllData = [
   },
 ]
 
-export const CustomerdataAll = [
+export const CustomerData = [
   {
     url: "https://wac-cdn-bfldr.atlassian.com/K3MHR9G8/at/qqc4sgmkh4h8jgh4shpk7nmj/MercedesBenz-357676847.webp?auto=webp",
     title: "Large enterprise",

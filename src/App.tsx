@@ -1,12 +1,5 @@
 import Routing from "./router"
 
-function App() {
-
-  return (
-    <>  
-      <Routing/>
-    </>
-  )
-}
+const App = () => <Routing/>
 
 export default App

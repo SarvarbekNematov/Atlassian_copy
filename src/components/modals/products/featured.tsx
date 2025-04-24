@@ -1,74 +1,74 @@
-import { HeroSvg, RightIcon } from '../../../assets/icons'
-import { AgentsIcon, AgentsYellowIcon, AlignIcon, ConfluenceIcon, FocusIcon, JiraIcon, LoomIcon, StrategyIcon, TalentIcon } from '../../../assets/modalIcons'
-import './featured.css'
+import {
+  HeroSvg,
+  RightIcon,
+  StrategyIcon,
+} from "../../../assets";
+import { modalData } from "../../../data";
+
+import "./featured.css";
 
 const FeaturedModal = () => {
   return (
     <div>
-      <div className="featured_block">
-        <h4 className='featured_title'>Atlassian Collections <span>NEW</span> </h4>
-        <p className='featured_desc'>A curated set of apps designed to solve your specific challenges</p>
-        <div className="featured_sub_block">
-          <div className="featured_card">
-            <span className='featured_icon_block'>
-              <HeroSvg/>
+      <div className="featured__wrapper">
+        <h4 className="featured__title">
+          Atlassian Collections <span>NEW</span>{" "}
+        </h4>
+
+        <p className="featured__desc">
+          A curated set of apps designed to solve your specific challenges
+        </p>
+
+        <div className="featured__sub-wrapper">
+          <div className="featured__card">
+            <span className="featured__icon-wrapper">
+              <HeroSvg />
             </span>
-            <p className='featured_desc_card'>Apps and agents to supercharge teamwork</p>
-            <ul className='featured_card_list'>
-              <li className='featured_card_item'>
-                <span className='featured_card_icon'><JiraIcon/></span>
-                <p className='featured_card_title'>Jira</p>
-              </li>
-              <li className='featured_card_item'>
-                <span className='featured_card_icon'><ConfluenceIcon/></span>
-                <p className='featured_card_title'>Confluence</p>
-              </li>
-              <li className='featured_card_item'>
-                <span className='featured_card_icon'><LoomIcon/></span>
-                <p className='featured_card_title'>Loom</p>
-              </li>
-              <li className='featured_card_item'>
-                <span className='featured_card_icon'><AgentsIcon/></span>
-                <p className='featured_card_title'>Agents</p>
-              </li>
-            </ul>
+            <p className="featured__desc-card">
+              Apps and agents to supercharge teamwork
+            </p>
+            <ul className="featured__card-list">
+                {modalData[0].map((item) => (
+                  <li key={item.title} className="featured__card-item">
+                    <span className="featured__card-icon">{item.icon}</span>
+                    <p className="featured__card-title">{item.title}</p>
+                  </li>
+                ))}
+              </ul>
           </div>
-          <div className="featured_card">
-            <span className='featured_icon_block'>
-              <StrategyIcon/>
+
+          <div className="featured__card">
+            <span className="featured__icon-wrapper">
+              <StrategyIcon />
             </span>
-            <p className='featured_desc_card'>Powerful apps to optimize strategy</p>
-            <ul className='featured_card_list'>
-              <li className='featured_card_item'>
-                <span className='featured_card_icon'><AlignIcon/></span>
-                <p className='featured_card_title'>Align</p>
-              </li>
-              <li className='featured_card_item'>
-                <span className='featured_card_icon'><FocusIcon/></span>
-                <p className='featured_card_title'>Focus</p>
-              </li>
-              <li className='featured_card_item'>
-                <span className='featured_card_icon'><TalentIcon/></span>
-                <p className='featured_card_title'>Talent</p>
-              </li>
-              <li className='featured_card_item'>
-                <span className='featured_card_icon'><AgentsYellowIcon/></span>
-                <p className='featured_card_title'>Agents</p>
-              </li>
+            <p className="featured__desc-card">
+              Powerful apps to optimize strategy
+            </p>
+            <ul className="featured__card-list">
+              {modalData[1].map((item) => (
+                <li key={item.title} className="featured__card-item">
+                  <span className="featured__card-icon">{item.icon}</span>
+                  <p className="featured__card-title">{item.title}</p>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
 
-        <span className='featured_libe_block'></span>
+        <span className="featured__line-wrapper"></span>
 
-        <div className='featured_box'>
-          <h4 className='featured_sub_title'>Atlassian Cloud Platform</h4>
-          <p className='featured_sub_desc'>The connected foundation of your system of work</p>
-          <a className='featured-link' href="">Learn more <RightIcon/></a>
+        <div className="featured__footer">
+          <h4 className="featured__footer-title">Atlassian Cloud Platform</h4>
+          <p className="featured__footer-desc">
+            The connected foundation of your system of work
+          </p>
+          <a className="featured__footer-link" href="">
+            Learn more <RightIcon />
+          </a>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default FeaturedModal
+export default FeaturedModal;

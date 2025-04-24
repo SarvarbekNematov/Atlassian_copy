@@ -1,355 +1,407 @@
-.team_work{
-    padding: 0 32px;
+.teamwork {
+  padding: 0 32px;
 }
 
-.teamwork_block{
-    text-align: center;
-    padding: 42px 0 20px;
+.teamwork__wrapper {
+  text-align: center;
+  padding: 42px 0 20px;
+  position: relative;
+}
+
+.teamwork__second-img {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  aspect-ratio: 37 / 36;
+  inset-block-start: -30px;
+  inset-inline-start: 55.7%;
+  animation: fadeIn 0.2s ease-out 0.4s forwards;
+}
+
+.teamwork__third-img {
+  position: absolute;
+  width: 37px;
+  height: 36px;
+  aspect-ratio: 37 / 36;
+  inset-block-start: -15px;
+  inset-inline-start: 62.7%;
+  animation: fadeIn 0.2s ease-out 0.6s forwards;
+}
+
+.teamwork__title {
+  text-align: center;
+  line-height: 2.375rem;
+  font-size: 2rem;
+  font-weight: 700;
+  font-family: "Charlie Display";
+}
+
+.teamwork__card {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.teamwork_jira_img {
+  display: block;
+  margin: 0 auto;
+  width: 56.3px;
+  height: 24px;
+}
+
+.teamwork__sub-title {
+  font-weight: 700;
+  line-height: 1.875rem;
+  font-size: 1.5rem;
+  color: #101214;
+}
+
+.teamwork__desc {
+  min-width: 304px;
+  max-width: 450px;
+  line-height: 1.625rem;
+  font-size: 1.125rem;
+  margin: 12px 0 18px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.teamwork__button-wrapper {
+  display: block;
+  margin-top: 9px;
+}
+
+.teamwork__button {
+  text-align: center;
+  background-color: #1868db;
+  padding: 10px 24px;
+  border-radius: 40px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.teamwork__link {
+  color: #803fa5;
+  cursor: pointer;
+}
+
+.teamwork__link-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.teamwork__mini-card {
+  padding: 30px 20px;
+  max-width: 450px;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 32px;
+  box-shadow: 0 0 1px 0 rgba(9, 30, 66, 0.31), 0 1px 1px 0 rgba(9, 30, 66, 0.25);
+  border-radius: 20px;
+  gap: 16px;
+}
+
+.teamwork__mini-img {
+  align-items: center;
+  width: 68px;
+  height: 68px;
+}
+
+.teamwork__mini-desc {
+  text-align: left;
+  line-height: 24px;
+  font-size: 16px;
+}
+
+.teamwork_mini_desc_link {
+  color: #1868db;
+  text-decoration-line: underline;
+  text-underline-offset: 0.125rem;
+}
+
+.teamwork__logo {
+  display: block;
+  margin: 0 auto;
+  width: 271px;
+  height: 24px;
+}
+
+.teamwork__link {
+  color: #1868db;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.teamwork__img-wrapper {
+  margin: 30px 0 0;
+  padding: 15px;
+  padding-bottom: 40px;
+  position: relative;
+}
+
+.teamwork__relative-wrapper {
+  position: absolute;
+  left: -10px;
+  bottom: 20px;
+  z-index: -1;
+  animation: bgImg 0.5s ease-in-out;
+}
+
+.teamwork__img {
+  border: 3px solid #f0f1f2;
+  border-radius: 5px;
+}
+
+.teamwork__first-img {
+  position: absolute;
+  width: 19px;
+  height: 19px;
+  aspect-ratio: 37 / 36;
+  inset-block-start: -45px;
+  inset-inline-start: 62.7%;
+  animation: fadeIn 0.2s ease-out 0.2s forwards;
+}
+
+.teamwork__link svg {
+  width: 13px;
+  height: 8px;
+  margin-left: 3px;
+  margin-top: 3px;
+}
+
+.teamwork__logo-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.teamwork__logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 271px;
+  height: 24px;
+}
+
+.teamwork__animate-wrapper {
+  opacity: 0;
+}
+
+.teamwork__animate-wrapper.in-view {
+  animation: fadeIn 0.5s forwards;
+}
+
+.teamwork__animate-wrapper.in-view.was-out {
+  animation: none; /* Avval animatsiyani o'chiramiz */
+}
+
+.teamwork__animate-wrapper.in-view:not(.animating) {
+  animation: none;
+}
+
+.teamwork__animate-wrapper.in-view.animating {
+  animation: fadeIn 0.5s forwards;
+}
+
+.desctop__container {
+  display: none;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (min-width: 768px) {
+  .teamwork {
+    padding: 0 60px;
+  }
+
+  .teamwork__title {
+    font-size: 2.25rem;
+    line-height: 2.625rem;
+  }
+
+  .teamwork__link-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 40px;
+    margin-top: 30px;
+  }
+
+  .teamwork__relative-wrapper {
+    left: -30px;
+    bottom: 5px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .teamwork__wrapper {
+    padding: 64px 0 54px;
+  }
+
+  .desctop__container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    height: 100vh;
+    overflow-y: auto;
     position: relative;
-}
-.teamwork_title{
-    text-align: center;
-    line-height: 2.375rem;
-    font-size: 2rem;
-    font-weight: 700;
-    font-family: 'Charlie Display';
-}
-.teamwork_card{
-    text-align: center;
-    margin-bottom: 60px;
-}
-.teamwork_jira_img{
-    display: block;
-    margin: 0 auto;
-    width: 56.3px;
-    height: 24px;
-}
-.teamwork_subtitle{
-    font-weight: 700;
-    line-height: 1.875rem;
-    font-size: 1.5rem;
-    color: #101214;
-}
-.teamwork_desc{
-    min-width: 304px;
-    line-height: 1.625rem;
-    font-size: 1.125rem;
-    margin: 12px 0 18px;
-}
-.teamwork_btn_block{
-    display: block;
-    margin-top: 9px;
-}
-.teamwork_btn{
-    text-align: center;
-    background-color: #1868db;
-    padding: 10px 24px;
-    border-radius: 40px;
-    color: #fff;
-    cursor: pointer;
-}
-.teamwork_link{
-    color: #803FA5;
-    cursor: pointer;
-}
-.teamwork_links_block{
+  }
+
+  .teamwork__container {
+    display: none;
+  }
+
+  .desctop__list {
     display: flex;
     flex-direction: column;
-    gap: 16px;
-}
-.teamwork_mini_card{
-    padding: 30px 20px;
+    height: auto;
     max-width: 450px;
+    position: relative;
+    flex: 1;
+    padding-bottom: 200px;
+  }
+
+  .desctop__item {
     display: flex;
-    align-items: center;
-    margin: 0 auto;
-    margin-top: 32px;
-    box-shadow: 0 0 1px 0 rgba(9, 30, 66, .31), 0 1px 1px 0 rgba(9, 30, 66, .25);
-    border-radius: 20px;
-    gap: 16px;
-}
-.teamwork_mini_img{
-    align-items: center;
-    width: 68px;
-    height: 68px;
-}
-.teamwork_mini_desc{
-    text-align: left;
-    line-height: 24px;
-    font-size: 16px;
-}
-.teamwork_mini_desc_link{
-    color: #1868db;
-    text-decoration-line: underline;
-    text-underline-offset: 0.125rem;
-}
-.teamwork_confluence_img{
-    display: block;
-    margin: 0 auto;
+    flex-direction: column;
+    gap: 32px;
+    margin-bottom: 150px;
+  }
+
+  .desctop__item-logo {
+    display: flex;
+    justify-content: left;
+  }
+
+  .desctop__item-logo0 svg {
+    width: 56px;
+    height: 24px;
+    margin-bottom: 10px;
+  }
+
+  .desctop__item-logo1 svg {
     width: 134px;
     height: 24px;
-}
-.teamwork_service_management_img{
-    display: block;
-    margin: 0 auto;
+    margin-bottom: 10px;
+  }
+
+  .desctop__item-logo2 svg {
     width: 271px;
     height: 24px;
-    
-}
-.teamwork_link_service_management{
-    color: #1868DB;
-    cursor: pointer;
+    margin-bottom: 10px;
+  }
+
+  .desctop__item-logo3 svg {
+    width: 238px;
+    height: 24px;
+    margin-bottom: 10px;
+  }
+
+  .desctop__item-title {
+    font-size: 2rem;
+    line-height: 2.375rem;
+    font-weight: 670;
+  }
+
+  .desctop__item-wrapper {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    padding: 12px 30px 20px 0;
+  }
+
+  .desctop__link-wrapper {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .desctop__button {
+    display: flex;
+    justify-content: center;
+    padding: 6px 24px;
+    background-color: #1868db;
+    color: #fff;
+    line-height: 20px;
+    font-size: 1pc;
+    border-radius: 40px;
+  }
+
+  .desctop__link {
+    color: #803fa5;
     display: flex;
     align-items: center;
-    justify-content: center;
-}
-.teamwork_img{
-    margin: 30px 0 0;
-    padding: 15px;
-    padding-bottom: 40px;
-    position: relative;
-}
-.teamwork_relative{
+    gap: 1px;
+  }
+
+  .desctop__card {
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 1px 0 rgba(9, 30, 66, 0.31),
+      0 1px 1px 0 rgba(9, 30, 66, 0.25);
+    padding: 30px 20px;
+    border-radius: 20px;
+    max-width: 450px;
+    gap: 16px;
+  }
+
+  .desctop__card-logo {
+    width: 68px;
+    height: 68px;
+  }
+
+  .desctop__card-desc strong {
+    font-weight: bold;
+    font-size: 1pc;
+  }
+
+  .desctop__card-link {
+    color: #1868db;
+    font-size: 1pc;
+    text-underline-offset: 0.125rem;
+    text-decoration-line: underline;
+    text-decoration-color: #1868db;
+  }
+
+  .desctop__video-list {
+    flex: 1;
+    position: sticky;
+    top: 50px;
+  }
+
+  .desctop__video-list li {
+    width: 100%;
+  }
+
+  .desctop__video-item0 {
     position: absolute;
-    left: -10px;
-    bottom: 20px;
-    z-index: -1;
-    animation: bgImg .5s ease-in-out 
-}
-.team_img_big{
-    border: 3px solid #F0F1F2;
-    border-radius: 5px;
-}
-.teamwork_img_absolute_one{
+    opacity: 1;
+  }
+
+  .desctop__video-item1 {
     position: absolute;
-    width: 19px;
-    height: 19px;
-    aspect-ratio: 37 / 36;
-    inset-block-start: -45px;
-    inset-inline-start: 62.7%;
-    animation: fadeIn 0.2s ease-out 0.2s forwards;
-}
-.teamwork_link_service_management svg{
+    opacity: 0;
+  }
+
+  .desctop__video-item2 {
+    position: absolute;
+    opacity: 0;
+  }
+
+  .desctop__link svg {
     width: 13px;
     height: 8px;
     margin-left: 3px;
     margin-top: 3px;
-    color: #1868DB;
-}
-.teamwork_img_absolute_two{
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    aspect-ratio: 37 / 36;
-    inset-block-start: -30px;
-    inset-inline-start: 55.7%;
-    animation: fadeIn 0.2s ease-out 0.4s forwards;
-}
-.teamwork_img_absolute_three{
-    position: absolute;
-    width: 37px;
-    height: 36px;
-    aspect-ratio: 37 / 36;
-    inset-block-start: -15px;
-    inset-inline-start: 62.7%;
-    animation: fadeIn 0.2s ease-out 0.6s forwards;
-}
-
-.teamwork_service_discovery_block{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.teamwork_service_discovery_img{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 271px;
-    height: 24px;
-}
-
-.teamwork_animate {
-    opacity: 0;
   }
-  
-  .teamwork_animate.in-view {
-    animation: fadeIn 0.5s forwards;
-  }
-  
-  .teamwork_animate.in-view.was-out {
-    animation: none; /* Avval animatsiyani o'chiramiz */
-  }
-  
-  .teamwork_animate.in-view:not(.animating) {
-    animation: none;
-  }
-  
-  .teamwork_animate.in-view.animating {
-    animation: fadeIn 0.5s forwards;
-  }
-
-  .teamwork_desctop_container{
-    display: none;
-  }
-
-  @keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    
-    100% {
-        opacity: 1;
-    }
-  }
-
-  @media (min-width: 768px) {
-    .team_work{
-        padding: 0 60px;
-    }
-    .teamwork_title{
-        font-size: 2.25rem;
-        line-height: 2.625rem;
-    }
-    .teamwork_links_block{
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        margin-bottom: 40px;
-        margin-top: 30px;
-    }
-    .teamwork_relative{
-        left: -30px;
-        bottom: 5px;
-    }
-    .teamwork_relative_confluence{
-        bottom: 5px;
-    }
-  }
-
-@media (min-width: 1024px) {
-    .teamwork_block{
-        padding: 64px 0 54px;
-    }
-    .teamwork_desctop_container{
-        display: flex;
-        justify-content: space-between;
-        gap: 20px;
-        height: 100vh;
-        overflow-y: auto;
-        position: relative;
-    }
-    .teamwork_container{
-        display: none   ;
-    }
-    .teamwork_desctop_list{
-        display: flex;
-        flex-direction: column;
-        height: auto;
-        max-width: 450px;
-        position: relative;
-        flex: 1;
-        padding-bottom: 200px;
-    }
-    .desctop_item{
-        display: flex;
-        flex-direction: column;
-        gap: 32px;
-        margin-bottom: 150px;
-    }
-    .desctop_item_logo{
-        display: flex;
-        justify-content: left;
-    }
-    .desctop_item_logo0 svg{
-        width: 56px;
-        height: 24px;
-        margin-bottom: 10px;
-    }
-    .desctop_item_logo1 svg{
-        width: 134px;
-        height: 24px;
-        margin-bottom: 10px;
-    }
-    .desctop_item_logo2 svg{
-        width: 271px;
-        height: 24px;
-        margin-bottom: 10px;
-    }
-    .desctop_item_logo3 svg{
-        width: 238px;
-        height: 24px;
-        margin-bottom: 10px;
-    }
-    .desctop_item_title{
-        font-size: 2rem;
-        line-height: 2.375rem;
-        font-weight: 670;
-    }
-    .desctop_item_desc_block{
-        font-size: 1.25rem;
-        line-height: 1.75rem;
-        padding: 12px 30px 20px 0;
-    }
-    .desctop_link_block{
-        display: flex;
-        gap: 20px;
-        align-items: center;
-    }
-    .desctop_fist_link{
-        display: flex;
-        justify-content: center;
-        padding: 6px 24px;
-        background-color: #1868db;
-        color: #fff;
-        line-height: 20px;
-        font-size: 1pc;
-        border-radius: 40px;
-    }
-    .desctop_second_link{
-        color: #803FA5;
-    }
-    .desctop_card{
-        display: flex;
-        align-items: center;
-        box-shadow: 0 0 1px 0 rgba(9, 30, 66, .31), 0 1px 1px 0 rgba(9, 30, 66, .25);
-        padding: 30px 20px;
-        border-radius: 20px;
-        max-width: 450px;
-        gap: 16px   ;
-    }
-    .desctop_card_logo{
-        width: 68px ;
-        height: 68px;
-    }
-    .desctop_card_desc strong{
-        font-weight: bold;
-        font-size: 1pc;
-    }
-    .desctop_card_link{
-        color: #1868db;
-        font-size: 1pc;
-        text-underline-offset:.125rem;
-        text-decoration-line: underline;text-decoration-color: #1868db;
-    }
-    .teamwork_videos_list{
-        flex: 1;
-        position: sticky;
-        top: 50px; 
-    }
-    .teamwork_videos_list li{
-        width: 100%;
-    }
-    .teamwork_videos_item0{
-        position: absolute;
-        opacity: 1;
-    }
-    .teamwork_videos_item1{
-        position: absolute;
-        opacity: 0;
-    }
-    .teamwork_videos_item2{
-        position: absolute;
-        opacity: 0;
-    }
 }

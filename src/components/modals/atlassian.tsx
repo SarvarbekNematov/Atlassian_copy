@@ -5,14 +5,14 @@ import './atlassian.css'
 const AtlassianModal = (props :{active : number}) => {
   return (
     <div>
-         <div className={`modal_atlassian  ${props.active === 3 ? 'atlassian_modal_active' : ''}`}>
-        <div className={`atlassian_block ${props.active === 3 ? 'atlassian_active' : ''}`}>
-          <ul className="atlassian_list">
+         <div className={`atlassian__modal  ${props.active === 3 ? 'atlassian__modal-active' : ''}`}>
+        <div className={`atlassian__wrapper ${props.active === 3 ? 'atlassian__active' : ''}`}>
+          <ul className="atlassian__list">
               {AtlassianData.map((item , index) => (
-                <li className="atlassian_item" key={index}>
+                <li className="atlassian__item" key={index}>
                   <a href="">
-                    <h4 className="atlassian_title">{item.title} {item.new ? <span className="atlassian_new">{item.new}</span> : ''}</h4>
-                    <p className="atlassian_desc">{item.desc}</p>
+                    <h4 className="atlassian__title">{item.title} {item.new ? <span className="atlassian__new">{item.new}</span> : ''}</h4>
+                    <p className="atlassian__desc">{item.desc}</p>
                   </a>
                 </li>
               ))}

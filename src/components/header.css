@@ -1,146 +1,187 @@
-.header{
-    padding: 8px;
-    max-width: 1272px;
-    margin: 0 auto;
-}
-.header_block{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 1rem;
-}
-.menu_sub_block{
-    display: none;
-}
-.menu{
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-}
-.header_list{
-    display: none;
-}
-.menu_sub_block_desctop{
-    display: none;
-}
-.header_list_item_desctop{
-    display: none;
+.header {
+  padding: 8px;
+  max-width: 100%;
+  position: fixed; /* Fixed position */
+  top: 0; /* Yuqorida joylashishi uchun */
+  left: 0; /* Chap tomondan boshlash */
+  right: 0;
+  z-index: 1000; /* Boshqa elementlar ustida joylashishi uchun */
+  background-color: #fff; /* Orqa fon */
 }
 
-.header_desctop_list{
-    display: none;
+.header__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  max-width: 1272px; /* Maksimal kenglik */
+  margin: 0 auto; /* Markazlashtirish */
 }
 
+.menu__sub-wrapper {
+  display: none;
+}
+
+.header__menu {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.header__list {
+  display: none;
+}
+
+.header__menu-desctop {
+  display: none;
+}
+
+.header__desctop-list {
+  display: none;
+}
 
 @media (min-width: 768px) {
-    .menu_block{
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        
-    }
-    .menu_sub_block{
-        display: flex;
-        gap: 1pc;
-    }
-    .border_line{
-        display: block;
-        width: 1px;
-        height: auto;
-        background: #DDDEE1;
-    }
-    .signIn_link{
-        padding: 0 10px;
-        color: #1558BC;
-        font-size: 1rem;
-        font-weight: 500;
-    }
-    .menu{
-        margin-left: 10px;
-    }
+  .menu__wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .menu__sub-wrapper {
+    display: flex;
+    gap: 1pc;
+  }
+
+  .header__border-line {
+    display: block;
+    width: 1px;
+    height: auto;
+    background: #dddee1;
+  }
+
+  .header__signin-link {
+    padding: 0 10px;
+    color: #1558bc;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  .header__menu {
+    margin-left: 10px;
+  }
 }
 @media (min-width: 1024px) {
-    .desctop_logo_block{
-        display: flex;
-        align-items: center;
-    }
-    .header_list{
-        display: flex;
-        margin-left: 32px;
-    }
-    .header_bottom_icon{
-        display: block;
-    }
-    .header_item_btn{
-        display: flex;
-        align-items: center;
-        padding-inline-end: 2rem;
-        gap: 8px;
-    }
-    .header{
-        padding: 0;
-    }
-    .header_block{
-        height: 68px;
-    }
-    .menu{
-        display: none;
-    }
-    .border_line{
-        display: none;
-    }
-    .border_center_line{
-        width: 1px;
-        height: auto;
-        background-color: #DDDEE1;
-    }
-    .header_list_item{
-        display: flex;
-        align-items: center;
-    }
-    .header_less_btn{
-        color: #7D818A;
-    }
-    .header_item{
-        cursor: pointer;
-    }
-    .header_item_btn{
-        cursor: pointer;
-    }
-    .search_icon{
-        cursor: pointer;
-    }
-    .logo_block{
-        cursor: pointer;
-    }
+  .header__logo-wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  .header{
+    z-index: 100;
+  }
+
+  .header-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* 50% shaffof qora rang */
+    z-index: 1; /* Header va modallardan pastroq, lekin boshqa kontentdan yuqori */
+  }
+
+  .header__list {
+    display: flex;
+    margin-left: 32px;
+  }
+
+  .header__bottom-icon {
+    display: block;
+  }
+
+  .header__item-button {
+    display: flex;
+    align-items: center;
+    padding-inline-end: 2rem;
+    gap: 8px;
+  }
+
+  .header {
+    padding: 0;
+  }
+
+  .header__wrapper {
+    height: 68px;
+  }
+
+  .header__menu {
+    display: none;
+  }
+
+  .header__border-line {
+    display: none;
+  }
+
+  .header__center-line {
+    width: 1px;
+    height: auto;
+    background-color: #dddee1;
+  }
+
+  .header__list-item {
+    display: flex;
+    align-items: center;
+  }
+
+  .header__less-button {
+    color: #7d818a;
+  }
+
+  .header__item {
+    cursor: pointer;
+  }
+
+  .header__item-button {
+    cursor: pointer;
+  }
+
+  .search__icon {
+    cursor: pointer;
+  }
+
+  .header__logo {
+    cursor: pointer;
+  }
 }
 
 @media (min-width: 1240px) {
-    .menu_sub_block{
-        display: none;
-    }
-    .menu_sub_block_desctop{
-        display: flex;
-        gap: 1pc;
-    }
-    .header_list_iten{
-        display: none;
-    }
-    .header_more_btn{
-        display: none;
-    }
-    .header_list_item_desctop{
-        display: flex;
-        align-items: center;
-    }
-    .header_list{
-        display: none;
-    }
-    .header_desctop_list{
-        display: flex;
-        margin-left: 32px;
-    }
-    .header_list_item{
-        cursor: pointer;
-    }
+  .menu__sub-wrapper {
+    display: none;
+  }
+
+  .header__menu-desctop {
+    display: flex;
+    gap: 1pc;
+  }
+
+  .header__list-item {
+    display: none;
+  }
+
+  .header__more-button {
+    display: none;
+  }
+
+  .header__list {
+    display: none;
+  }
+
+  .header__desctop-list {
+    display: flex;
+    margin-left: 32px;
+  }
+
+  .header__list-item {
+    cursor: pointer;
+  }
 }

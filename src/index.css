@@ -6,6 +6,11 @@
     padding: 0;
 }
 
+body{
+  box-sizing: border-box;
+  margin: 0;
+}
+
 /* Charlie Display font oilasi */
   
   @font-face {
@@ -68,6 +73,7 @@
  h2 , h3 , h4 , h5 , h6 {
     font-family: 'Charlie Display'; 
  }
- p{
+ 
+ p {
     font-family: 'Charlie Text';
  }

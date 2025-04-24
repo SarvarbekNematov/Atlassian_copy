@@ -1,55 +1,74 @@
-.modal_slution{
-    display: none;
+.solution__modal {
+  display: none;
 }
 
-
 @media (min-width: 1024px) {
-    .modal_slution{
-        display: flex;
-        justify-content: center;
+  .solution__modal {
+    display: flex;
+    justify-content: center;
+  }
+
+  .solution__wrapper {
+    display: none;
+  }
+
+  .solution__active {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    opacity: 1;
+    z-index: 2;
+    background-color: #fff;
+    width: 912px;
+    top: 68px;
+    box-shadow: 0 0 1px 0 #dddee1, 0 5px 20px -5px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    animation: productAnimate .25s linear forwards;
+    transition: width .2s ease;
+  }
+
+  .solution__sub-wrapper {
+    padding: 2.5rem;
+  }
+
+  .solution__box {
+    align-items: center;
+    padding-bottom: 0px !important;
+  }
+
+  .solution__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .solution__footer {
+    background-color: #f8f8f8;
+    padding: 2.5rem;
+  }
+
+  .solution__title {
+    display: block;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    font-weight: 700;
+    color: #101214;
+    padding-bottom: 30px;
+    font-family: "Charlie Display";
+  }
+
+  .solution__item li {
+    font-size: 0.875rem;
+    height: 40px;
+    cursor: pointer;
+  }
+
+  @keyframes productAnimate {
+    0% {
+      opacity: 0;
     }
-    .solution_block{
-        display: none;
+    100%{
+      opacity: 1;
     }
-    .activeSolution{
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        z-index: 2;
-        background-color: #fff;
-        width: 912px;
-        top: 70px;
-        box-shadow: 0 0 1px 0 #DDDEE1, 0 5px 20px -5px rgba(0, 0, 0, .1);
-        border-radius: 15px;
-    }
-    .solution_sub_block{
-        padding: 2.5rem;
-    }
-    .solution_box{
-        align-items: center;
-        padding-bottom: 0px !important;
-    }
-    .solution_list{
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        gap: 1.5rem;    
-    }
-    .solution_footer{
-        background-color: #f8f8f8;
-        padding: 2.5rem;
-    }
-    .solution_title{
-        display: block;
-        font-size: .75rem;
-        line-height: 1rem;
-        font-weight: 700;
-        color: #101214;
-        padding-bottom: 30px;
-        font-family: 'Charlie Display';
-    }
-    .solution_item li{
-        font-size: .875rem;
-        height: 40px;
-        cursor: pointer;
-    }
+  }
 }

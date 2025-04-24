@@ -1,6 +1,6 @@
 import { useRoutes } from "react-router-dom"
 import MainLayout from "../layout"
-import Dashboard from "../pages/dawboard"
+import Dashboard from "../pages/dashboard"
 
 const Routing = () => {
   return (

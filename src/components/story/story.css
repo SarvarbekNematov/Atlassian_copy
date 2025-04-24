@@ -1,136 +1,140 @@
-.story{
-    margin-top: 60px;
-    position: relative;
-    padding: 140px 0 60px;
+.story {
+  margin-top: 60px;
+  position: relative;
+  padding: 140px 0 60px;
 }
 
-.story_img_block{
-    position: absolute;
-    top: 0;
-    left: 75px;
-    
-}
-
-.story_second_block{
-    transform: translateY(-30%);
-    margin-left: 70px;
-}
-
-.story_block{
-    text-align: center;
-    padding: 0 32px;
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-}
-
-.story_title{
-    line-height: 2.375rem;
-    font-size: 2.5rem;
-    color: #101214;
-}
-.story_title strong{
-    font-weight: 800;
-}
-
-.story_desc{
-    line-height: 1.5rem;
-    font-size: 1rem;
-    max-width: 460px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.story_share_block{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.story_share{
-    padding: 10px 24px;
-    font-size: 1.25rem;
-    border: 2px solid #101214;
-    border-radius: 40px;
-    font-weight: 500;
-}
-
-.story_checked_img_block{
-    position: absolute;
-    top: 40%;
-    right: 40px;
-    display: none;
-}
-
-.story_img_block {
+.story__check-img {
+  position: absolute;
+  top: 10%;
+  right: -70px;
+  display: none;
   opacity: 0;
-  /* Animatsiya avtomatik ishlamaydi */
+}
+
+.story__img-wrapper {
+  position: absolute;
+  top: -50%;
+  left: 14%;
+  opacity: 0;
+}
+
+.story__black-img {
+  transform: translateY(-30%);
+  margin-left: 70px;
+}
+
+.story__wrapper {
+  text-align: center;
+  padding: 0 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  max-width: 510px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+.story__title {
+  line-height: 2.375rem;
+  font-size: 2.5rem;
+  color: #101214;
+}
+
+.story__title strong {
+  font-weight: 800;
+}
+
+.story__desc {
+  line-height: 1.5rem;
+  font-size: 1rem;
+  max-width: 460px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.story__share-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.story__share {
+  padding: 10px 24px;
+  font-size: 1.25rem;
+  border: 2px solid #101214;
+  border-radius: 40px;
+  font-weight: 500;
 }
 
 /* IntersectionObserver orqali qo'shiladigan class */
-.story_img_block.in-view {
+.story__img-wrapper.in-view {
   animation: fadeIn 0.7s forwards;
 }
 
 /* Elementga qayta kirish animatsiyasi uchun */
-.story_img_block.in-view.was-out {
+.story__img-wrapper.in-view.was-out {
   animation: none; /* Avval animatsiyani o'chiramiz */
 }
 
 /* Kichik kechikish bilan animatsiyani qayta ishga tushiramiz */
-.story_img_block.in-view:not(.animating) {
+.story__img-wrapper.in-view:not(.animating) {
   animation: none;
 }
 
-.story_img_block.in-view.animating {
+.story__img-wrapper.in-view.animating {
   animation: fadeIn 0.7s forwards;
 }
 
 @keyframes fadeIn {
   0% {
-      opacity: 0;
+    opacity: 0;
   }
-  
+
   100% {
-      opacity: 1;
+    opacity: 1;
   }
 }
-  .story_checked_img_block {
-  opacity: 0;
-  /* Animatsiya avtomatik ishlamaydi */
+
+.story__check-img.in-view {
+  animation: checkedIn 2s forwards;
 }
 
-/* IntersectionObserver orqali qo'shiladigan class */
-.story_checked_img_block.in-view {
-  animation: checkedIn 1s forwards;
-}
-
-/* Elementga qayta kirish animatsiyasi uchun */
-.story_checked_img_block.in-view.was-out {
-  animation: none; /* Avval animatsiyani o'chiramiz */
-}
-
-/* Kichik kechikish bilan animatsiyani qayta ishga tushiramiz */
-.story_checked_img_block.in-view:not(.animating) {
+.story__check-img.in-view.was-out {
   animation: none;
 }
 
-.story_checked_img_block.in-view.animating {
-  animation: checkedIn 1s forwards;
+.story__check-img.in-view:not(.animating) {
+  animation: none;
+}
+
+.story__check-img.in-view.animating {
+  animation: checkedIn 2s forwards;
 }
 
 @keyframes checkedIn {
   0% {
-      opacity: 0;
+    opacity: 0;
   }
-  
+
   100% {
-      opacity: 1;
+    opacity: 1;
   }
 }
-@media (min-width:768px) {
-  .story_checked_img_block{
+
+@media (min-width: 768px) {
+  .story__check-img {
     display: block;
   }
 
+  .story__img-wrapper {
+    top: -30%;
+    left: -100px;
+  }
+
+  .story__black-img{
+    margin-left: -10px;
+    margin-top: 30px;
+  }
 }

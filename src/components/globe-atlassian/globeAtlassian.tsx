@@ -1,7 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import { LightningIcon } from "../../assets/icons";
-import "./globeAtlassian.css";
 import { useIntersectionObserver } from "usehooks-ts";
+
+import "./globeAtlassian.css";
+
 const GlobeAtlassian = () => {
     const [count300k, setCount300k] = useState<number>(0);
     const [count200, setCount200] = useState<number>(0);
@@ -106,47 +108,47 @@ const GlobeAtlassian = () => {
     }, [isIntersecting]);
   
   return (
-    <div className="section_globe">
+    <div className="globe__section">
       <div className="globe">
-        <div className="globe_block" ref={(el) => {
+        <div className="globe__wrapper" ref={(el) => {
                 ref(el);
                 elementRef.current = el;
               }}>
-                <div className="globe_double_block">
-          <div className="globe_title_block">
-            <h3 className="globe_title">
+                <div className="globe__double-wrapper">
+          <div className="globe__title-wrapper">
+            <h3 className="globe__title">
               Teams across the globe run on Atlassian
             </h3>
             <div ref={section300kRef}>
-              <span  className="plusIcon">{formatNumber(count300k)}+</span>
+              <span className="globe__cooperation-quantity">{formatNumber(count300k)}+</span>
             </div>
-            <p className="globe_desc">
+            <p className="globe__desc">
               companies power team collaboration with Atlassian
             </p>
           </div>
-          <div className="globe_sub_block">
-            <div ref={section200Ref} className="globe_lining_block">
-              <span className="plusIcon media_plusicon">{count200}+</span>
-              <p className="globe_sub_desc">
+          <div className="globe__sub-wrapper">
+            <div ref={section200Ref} className="globe__lining-wrapper">
+              <span className="globe__cooperation-quantity globe__countries-quantity">{count200}+</span>
+              <p className="globe__sub-desc">
                 countries have companies that use Atlassian
               </p>
             </div>
-            <div ref={section80Ref} className="globe_lining_block">
-              <span  className="foizIcon">{count80}%</span>
-              <p className="globe_sub_desc">
+            <div ref={section80Ref} className="globe__lining-wrapper">
+              <span  className="globe__products-quantity">{count80}%</span>
+              <p className="globe__sub-desc">
                 of Fortune 500 companies use Atlassian products
               </p>
             </div>
           </div>
           </div>
-          <div className="globe_img_block">
-            <span className="circularIcon"></span>
-              <span className="lightningIcon">
+          <div className="globe__imgs-box">
+              <span className="circular__icon"></span>
+              <span className="light__icon">
                 <LightningIcon />
               </span>
-            <div className="globe_img_sub_block">
+            <div className="globe__img-wrapper">
               <img
-                className="globe_img"
+                className="globe__img"
                 src="https://wac-cdn-bfldr.atlassian.com/K3MHR9G8/at/q338n5stm9x4j5mq7tb43m/earth_1.webp?auto=webp"
                 alt=""
               />

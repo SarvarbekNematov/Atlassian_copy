@@ -4,22 +4,22 @@ import './resources.css'
 
 const ResourcesModal = (props : {active : number}) => {
   return (
-    <div className={`modal_resources ${props.active === 4 ? 'modal_resources_activ' : ''}`}>
-        <div className={`resources_block ${props.active === 4 ? 'resources_active' : ''}`}>
-          <ul className="resources_list">
+    <div className={`resources__modal ${props.active === 4 ? 'resources__modal-active' : ''}`}>
+        <div className={`resources__wrapper ${props.active === 4 ? 'resources__active' : ''}`}>
+          <ul className="resources__list">
             {ResourcesData.map((item , index) => (
-              <li key={index} className="resources_item">
+              <li key={index} className="resources__item">
                 <a href="">
-                  <h4 className="resources_item_title">{item.title}</h4>
-                  <p className="resources_item_desc">{item.desc}</p>
+                  <h4 className="resources__item-title">{item.title}</h4>
+                  <p className="resources__item-desc">{item.desc}</p>
                 </a>
               </li>
             ))}
           </ul>
-          <div className="resources_footer_list">
-            <div className="resources_footer_item">
-              <h5 className="resources_title">Support</h5>
-              <ul className="resources_footer_block">
+          <div className="resources__footer-list">
+            <div className="resources__footer-item">
+              <h5 className="resources__title">Support</h5>
+              <ul className="resources__footer-wrapper">
                 <li>General Inquiries</li>
                 <li>Technical Support</li>
                 <li>Product Advice</li>
@@ -30,9 +30,9 @@ const ResourcesModal = (props : {active : number}) => {
                 <li>Pruchasing and Licensing</li>
               </ul>
             </div>
-            <div className="resources_footer_item">
-              <h5 className="resources_title">Learn</h5>
-              <ul className="resources_footer_block">
+            <div className="resources__footer-item">
+              <h5 className="resources__title">Learn</h5>
+              <ul className="resources__footer-wrapper">
                 <li>Project Management</li>
                 <li>Project Collaboration</li>
                 <li>Agile</li>

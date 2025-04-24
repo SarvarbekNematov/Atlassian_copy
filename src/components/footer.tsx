@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { SubLogo } from "../assets/icons";
+
 import "./footer.css";
 
 const Footer = () => {
@@ -11,41 +12,41 @@ const Footer = () => {
   ];
   return (
     <div className="footer">
-      <div className="footer_block">
-        <div className="footer_list">
+      <div className="footer__wrapper">
+        <div className="footer__list">
           <div>
-            <span className="footer_logo_block">
+            <span className="footer__logo-wrapper">
               <SubLogo />
             </span>
-            <ul className="footer_item_block">
-              <li className="footer_text">
+            <ul className="footer__item-wrapper">
+              <li className="footer__text">
                 <a href="">Company</a>{" "}
               </li>
-              <li className="footer_text">
+              <li className="footer__text">
                 <a href="">Careers</a>{" "}
               </li>
-              <li className="footer_text">
+              <li className="footer__text">
                 <a href="">Events</a>{" "}
               </li>
-              <li className="footer_text">
+              <li className="footer__text">
                 <a href="">Blogs</a>{" "}
               </li>
-              <li className="footer_text">
+              <li className="footer__text">
                 <a href="">Investor Relations</a>{" "}
               </li>
-              <li className="footer_text">
+              <li className="footer__text">
                 <a href="">Attlasian Foundation</a>{" "}
               </li>
-              <li className="footer_text">
+              <li className="footer__text">
                 <a href="">Contact us</a>{" "}
               </li>
             </ul>
           </div>
           <div>
-            <strong className="footer_title">
+            <strong className="footer__title">
               <a href="">PRODUCTS</a>{" "}
             </strong>
-            <ul className="footer_item_block">
+            <ul className="footer__item-wrapper">
               <li>
                 <a href="">Rovo</a>{" "}
               </li>
@@ -68,15 +69,15 @@ const Footer = () => {
                 <a href="">Bitbucket</a>{" "}
               </li>
             </ul>
-            <p className="footer_link">
+            <p className="footer__link">
               <a href="">See all products</a>{" "}
             </p>
           </div>
           <div>
-            <strong className="footer_title">
+            <strong className="footer__title">
               <a href="">RESOURCES</a>{" "}
             </strong>
-            <ul className="footer_item_block">
+            <ul className="footer__item-wrapper">
               <li>
                 <a href="">Technical support</a>{" "}
               </li>
@@ -96,15 +97,15 @@ const Footer = () => {
                 <a href="">My account</a>{" "}
               </li>
             </ul>
-            <p className="footer_link">
+            <p className="footer__link">
               <a href="">Create support ticket</a>{" "}
             </p>
           </div>
           <div>
-            <strong className="footer_title">
+            <strong className="footer__title">
               <a href="">LEARN</a>{" "}
             </strong>
-            <ul className="footer_item_block">
+            <ul className="footer__item-wrapper">
               <li>
                 <a href="">Partners</a>{" "}
               </li>
@@ -121,16 +122,16 @@ const Footer = () => {
                 <a href="">Enterprise services</a>{" "}
               </li>
             </ul>
-            <p className="footer_link">
+            <p className="footer__link">
               <a href="">See all resources</a>{" "}
             </p>
           </div>
         </div>
       </div>
-      <div className="footer_end_block">
-        <p className="footer_end_title">Copyright © 2025 Atlassian</p>
-        <div className="footer_end_sub">
-          <div className="footer_end_text_block">
+      <div className="finished__wrapper">
+        <p className="finished__title">Copyright © 2025 Atlassian</p>
+        <div className="finished__box">
+          <div className="finished__text-wrapper">
             <p>Privacy policy</p>
           <p>Terms</p>
           <p>Impressum</p>

@@ -1,9 +1,9 @@
 import { JSX, useEffect, useState } from "react";
 import { modalProductsData, ProductsTitles } from "../../data"
 import FeaturedModal from "./products/featured"
+import { RightIcon } from "../../assets";
 
 import './product.css'
-import { RightIcon } from "../../assets";
 
 type MyDataType = {
     icons: JSX.Element;
@@ -25,17 +25,17 @@ const ProductsModal = (props : {active : number , activeId : number , handleClic
     
   return (
     <div>
-        <div className="modal_product_container">
+        <div className="product__modal-container">
         <div
-          className={`modal_products ${props.active === 1 ? "modalActive" : ""}`}
+          className={`product__modal ${props.active === 1 ? "product__active" : ""}`}
         >
           <div>
-            <ul className="modal_active_list">
+            <ul className="product__active-list">
               {ProductsTitles.map((item) => (
                 <li
                   key={item.id}
-                  className={`modal_active_item ${
-                    props.activeId === item.id ? "activeLink" : ""
+                  className={`product__active-item ${
+                    props.activeId === item.id ? "product__active-link" : ""
                   }`}
                 >
                   <button onClick={() => props.handleClick(item.id)}>
@@ -43,28 +43,28 @@ const ProductsModal = (props : {active : number , activeId : number , handleClic
                   </button>
                 </li>
               ))}
-            <div className="links">
-              <a className="links_a" href="">See all products <RightIcon/></a>
+            <div className="product__link-wrapper">
+              <a className="product__link" href="">See all products <RightIcon/></a>
             </div>
             </ul>
           </div>
           <div>
-            {props.activeId === 1 ? <FeaturedModal /> : <ul className="modal-product-sub-list">
+            {props.activeId === 1 ? <FeaturedModal /> : <ul className="product__list">
               {data?.map((item, index) => (
-                <li key={index} className="modal-product-sub-item">
-                  <div className="modal-product-icon-block">
-                    <span className="modal-product-icon">{item.icons}</span>
+                <li key={index} className="product__item">
+                  <div className="product__icon-wrapper">
+                    <span className="product__icon">{item.icons}</span>
                   </div>
                   <div>
-                    <h5 className="modal-product-title">
+                    <h5 className="product__title">
                       {item.title}{" "}
                       {item.new ? (
-                        <span className="modal-product-new">{item.new}</span>
+                        <span className="product__new">{item.new}</span>
                       ) : (
                         ""
                       )}{" "}
                     </h5>
-                    <p className="modal-product-desc">{item.desc}</p>
+                    <p className="product__desc">{item.desc}</p>
                   </div>
                 </li>
               ))}

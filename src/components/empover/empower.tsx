@@ -1,68 +1,81 @@
-import {  useLayoutEffect, useRef, useState } from "react";
-import "./empower.css";
+import { useLayoutEffect, useRef, useState } from "react";
+import { RightIcon } from "../../assets";
 import { EmpowerLinksArr } from "../../data";
 
-
+import "./empower.css";
 
 const Empower = () => {
-  const [activeId , setActiveId] = useState(1);
+  const [activeId, setActiveId] = useState(1);
 
-  const handleClickBtn = (id: number) => {    
+  const handleClickBtn = (id: number) => {
     setActiveId(id);
   };
 
-
   const [activeHeight, setActiveHeight] = useState(0);
-const activeRef = useRef<HTMLDivElement | null>(null);
+  const activeRef = useRef<HTMLDivElement | null>(null);
 
-useLayoutEffect(() => {
-  const handleResize = () => {
-    if (activeRef.current) {
-      setActiveHeight(activeRef.current.offsetHeight);
-    }
-  };
+  useLayoutEffect(() => {
+    const handleResize = () => {
+      if (activeRef.current) {
+        setActiveHeight(activeRef.current.offsetHeight);
+      }
+    };
 
-  handleResize();
+    handleResize();
 
-  window.addEventListener("resize", handleResize);
-  return () => window.removeEventListener("resize", handleResize);
-}, [activeId]);
-  
-  
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [activeId]);
+
   return (
     <div className="empower">
       <div>
-        <h3 className="empower_title">Empower everyone, on every team</h3>
-        <ul className="empower_list">
+        <h3 className="empower__title">Empower everyone, on every team</h3>
+        <ul className="empower__list">
           {EmpowerLinksArr.map((i) => (
-            <li key={i.id} className={i.id === activeId ? "empower_item active" : "empower_item"}>
+            <li
+              key={i.id}
+              className={
+                i.id === activeId ? "empower__item active" : "empower__item"
+              }
+            >
               <button
                 onClick={() => {
                   handleClickBtn(i.id);
-                }}>
+                }}
+              >
                 {i.name}
               </button>
             </li>
           ))}
         </ul>
-        <div className="card_container" style={{height: activeHeight < 200 ? 400 : activeHeight }}>
-          {
-            EmpowerLinksArr.map(item=>(
-              <div key={item.id} ref={item.id === activeId ? activeRef : null} className={`empower_card ${activeId === item.id ? "card_active" : ""}`}>
-              <div className="empower_sub_block">
-                <h3 className="empower_sub_title">{item.title}</h3>
-                <p className="empower_desc">{item.desc}</p>
-                <a className="empower_link" href="">{item.link}</a>
+        <div
+          className="empower__container"
+          style={{ height: activeHeight < 200 ? 400 : activeHeight }}
+        >
+          {EmpowerLinksArr.map((item) => (
+            <div
+              key={item.id}
+              ref={item.id === activeId ? activeRef : null}
+              className={`empower__card ${
+                activeId === item.id ? "empower__card-active" : ""
+              }`}
+            >
+              <div className="empower__sub-wrapper">
+                <h3 className="empower__sub-title">{item.title}</h3>
+                <p className="empower__desc">{item.desc}</p>
+                {item.link && (
+                  <a className="empower__link" href="">
+                    {item.link} <RightIcon />
+                  </a>
+                )}
               </div>
-              <div className="empower_img_block">
+              <div className="empower__img-wrapper">
                 <img src={item.url} alt="img" />
               </div>
             </div>
-            ))
-          }
+          ))}
         </div>
-
-
       </div>
     </div>
   );

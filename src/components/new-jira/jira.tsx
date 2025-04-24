@@ -1,10 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import { JiraBottomImg } from "../../assets/icons";
-import "./jira.css";
 import { useIntersectionObserver } from "usehooks-ts";
 import { JiradataAll } from "../../data";
 
-
+import "./jira.css";
 
 const Jira = () => {
   const [data, setData] = useState(JiradataAll.filter((i) => i.id === 1));
@@ -45,13 +44,13 @@ const Jira = () => {
 
   return (
     <div className="jira">
-      <h2 className="jira_title">
+      <h2 className="jira__title">
         The new Jira: <br />
         from{" "}
-        <span className="jira_block">
+        <span className="jira__sub-wrapper">
           teams
           <span
-            className="jira_bg_absolute"
+            className="jira__background-animate"
             ref={(el) => {
               ref(el);
               elementRef.current = el;
@@ -62,32 +61,32 @@ const Jira = () => {
         </span>{" "}
         to dreams
       </h2>
-      <div className="jira_link_block">
-        <a className="jira_link" href="">
+      <div className="jira__link-wrapper">
+        <a className="jira__link" href="">
           Get started
         </a>
       </div>
-      <ul className="jira_list">
+      <ul className="jira__list">
         {JiradataAll.map((i, index) => (
           <li
             key={index}
             className={
-              i.id === activeId ? "jira_cards jira_active" : "jira_cards"
+              i.id === activeId ? "jira__card jira__active" : "jira__card"
             }
             onClick={() => {
               handleClickBtn(i.id);
             }}
           >
-            <span className="jira_icon">
+            <span className="jira__icon">
               <img src={i.icons} alt="" />
             </span>
-            <p className="jira_sub_title">{i.title}</p>
+            <p className="jira__sub-title">{i.title}</p>
           </li>
         ))}
       </ul>
-      <div className="jira_vid_img_block">
+      <div className="jira__wrapper">
         {activeId === 0 ? (
-          <div className="jira_vid_block">
+          <div className="jira__video-wrapper">
             <video
               playsInline
               muted
@@ -95,7 +94,7 @@ const Jira = () => {
               loop
               poster="https://wac-cdn-bfldr.atlassian.com/K3MHR9G8/at/7m6czqqkjbq8rztkbgntgh/CSD-10721_WAC_Hero_A_HD.webp"
               autoPlay
-              className="hero-video"
+              className="hero__video"
             >
               <source
                 src="https://wac-cdn.atlassian.com/misc-assets/webp-images/CSD-10721_WAC_Hero_FULL_LowBR.mp4"
@@ -105,11 +104,11 @@ const Jira = () => {
             </video>
           </div>
         ) : (
-          <div className="jira_img" onClick={() => setActiveId(0)}>
+          <div className="jira__img" onClick={() => setActiveId(0)}>
             <img src={data[0].img} alt="" />
           </div>
         )}
-        <div className="jira_bg"></div>
+        <div className="jira__bg"></div>
       </div>
     </div>
   );

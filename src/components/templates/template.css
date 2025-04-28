@@ -11,9 +11,8 @@
   width: 100%;
   overflow-x: auto;
   white-space: nowrap;
-  padding: 0 50px;
+  padding: 8px 50px 8px 50px;
   gap: 16px;
-  padding-top: 8px;
   float: left;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
@@ -65,28 +64,36 @@
 
 .template__link {
   padding-top: 1rem;
-  color: #1868db;
   display: flex;
   align-items: center;
+  font-size: 0.875rem; /* Kichikroq shrift o'lchami */
+  text-decoration: none; /* Tagida chiziq bo'lmasligi uchun */
+  font-weight: 500; /* Biroz qalinroq shrift */
 }
 
+.template__link {
+  color: #1868db; /* Ko'k rang */
+}
+
+/* Agar SVG ishlatayotgan bo'lsangiz, u holda */
 .template__link svg {
   width: 15px;
   height: 10px;
   margin-left: 3px;
-  margin-top: 3px;
+  margin-top: 1px; /* Yaxshiroq tekislash uchun */
 }
+
 
 @media (min-width: 768px) {
   .template__list {
-    padding: 0 60px;
+    padding: 8px 60px;
   }
 }
 
 @media (min-width: 1024px) {
   .template__list {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 32px;
   }
 

@@ -1,7 +1,9 @@
+/* Modal base state (hidden) */
 .product__modal {
   display: none;
 }
 
+/* Active modal state for larger screens (1024px and above) */
 @media (min-width: 1024px) {
   .product__modal-container {
     display: flex;
@@ -18,8 +20,8 @@
     top: 68px;
     box-shadow: 0 0 1px 0 #dddee1, 0 5px 20px -5px rgba(0, 0, 0, 0.1);
     border-radius: 15px;
-    animation: productAnimate .25s linear forwards;
-    transition: width .2s ease;
+    animation: productAnimate 0.25s linear forwards;
+    transition: width 0.2s ease;
   }
 
   .product__active-list {
@@ -34,27 +36,22 @@
 
   .product__active-item {
     padding: 12px 32px 12px 16px;
-    cursor: pointer;
     font-weight: 700;
     border-radius: 0.5rem 0 0 0.5rem;
     font-size: 14px;
     cursor: pointer;
-  }
-
-  .product__active-item button {
-    cursor: pointer;
+    transition: color 0.35s;
   }
 
   .product__active-item:hover {
     color: #1868db;
-    transition: 0.35s;
   }
 
   .product__list {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);  /* Simplified grid layout */
     padding: 40px 40px 40px 32px;
-    column-gap: 2rem;
+    gap: 2rem;  /* Unified column and row gap */
   }
 
   .product__item {
@@ -126,11 +123,12 @@
     height: 10px;
   }
 
+  /* Keyframe animation for modal appearance */
   @keyframes productAnimate {
     0% {
       opacity: 0;
     }
-    100%{
+    100% {
       opacity: 1;
     }
   }

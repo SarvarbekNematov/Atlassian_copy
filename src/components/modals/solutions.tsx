@@ -5,13 +5,16 @@ import {
 } from "../../assets";
 import { modalData } from "../../data";
 
-import './solution.css'
+import './solution.css';
 
+interface SolutionModalProps {
+  active: number;
+}
 
-const SolutionModal = (props: { active: number }) => {
+const SolutionModal = ({ active }: SolutionModalProps) => {
   return (
     <div className="solution__modal">
-      <div className={`solution__wrapper ${props.active === 2 ? "solution__active" : ""}`}>
+      <div className={`solution__wrapper ${active === 2 ? "solution__active" : ""}`}>
         <div className="solution__sub-wrapper">
           <div className="featured__sub-wrapper solution__box">
             <div className="featured__card">
@@ -30,6 +33,7 @@ const SolutionModal = (props: { active: number }) => {
                 ))}
               </ul>
             </div>
+
             <div className="featured__card">
               <span className="featured__icon-wrapper">
                 <StrategyIcon />
@@ -46,12 +50,13 @@ const SolutionModal = (props: { active: number }) => {
                 ))}
               </ul>
             </div>
+
             <div className="featured__footer">
               <h4 className="featured__footer-title">Atlassian Cloud Platform</h4>
               <p className="featured__footer-desc">
                 The connected foundation of your system of work
               </p>
-              <a className="featured__footer-link" href="">
+              <a className="featured__footer-link" href="#">
                 Learn more <RightIcon />
               </a>
             </div>
@@ -81,7 +86,7 @@ const SolutionModal = (props: { active: number }) => {
             <ul className="solution__item">
               <span className="solution__title">BY INDUSTRY</span>
               <li>Retail</li>
-              <li>Telecommunications </li>
+              <li>Telecommunications</li>
               <li>Professional service</li>
               <li>Government</li>
             </ul>

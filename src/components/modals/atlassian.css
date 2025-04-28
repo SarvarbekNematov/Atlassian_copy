@@ -1,13 +1,15 @@
+/* Modal base state (hidden) */
 .atlassian__modal {
   display: none;
 }
 
+/* Active modal state on larger screens (1024px and above) */
 @media (min-width: 1024px) {
   .atlassian__modal-active {
     display: flex;
     justify-content: center;
   }
-  
+
   .atlassian__active {
     display: flex;
     position: fixed;
@@ -18,16 +20,15 @@
     top: 68px;
     box-shadow: 0 0 1px 0 #dddee1, 0 5px 20px -5px rgba(0, 0, 0, 0.1);
     border-radius: 15px;
-    animation: productAnimate .25s linear forwards;
-    transition: width .2s ease;
+    animation: productAnimate 0.25s linear forwards;
+    transition: width 0.2s ease;
   }
 
   .atlassian__list {
     padding: 40px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    row-gap: 2.5rem;
-    column-gap: 2rem;
+    grid-template-columns: repeat(4, 1fr);  /* Simplified the grid definition */
+    gap: 2.5rem 2rem;  /* Using shorthand for row and column gap */
   }
 
   .atlassian__title {
@@ -43,7 +44,6 @@
 
   .atlassian__desc {
     font-size: 11.5px;
-    letter-spacing: 0;
     color: #505258;
   }
 
@@ -57,11 +57,12 @@
     margin-left: 10px;
   }
 
+  /* Keyframe animation for modal appearance */
   @keyframes productAnimate {
     0% {
       opacity: 0;
     }
-    100%{
+    100% {
       opacity: 1;
     }
   }

@@ -6,49 +6,44 @@ import "./empower.css";
 
 const Empower = () => {
   const [activeId, setActiveId] = useState(1);
+  const [activeHeight, setActiveHeight] = useState(0);
+  const activeRef = useRef<HTMLDivElement | null>(null);
 
   const handleClickBtn = (id: number) => {
     setActiveId(id);
   };
 
-  const [activeHeight, setActiveHeight] = useState(0);
-  const activeRef = useRef<HTMLDivElement | null>(null);
-
   useLayoutEffect(() => {
-    const handleResize = () => {
+    const updateHeight = () => {
       if (activeRef.current) {
         setActiveHeight(activeRef.current.offsetHeight);
       }
     };
 
-    handleResize();
+    updateHeight();
+    window.addEventListener("resize", updateHeight);
 
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", updateHeight);
   }, [activeId]);
 
   return (
     <div className="empower">
       <div>
         <h3 className="empower__title">Empower everyone, on every team</h3>
+
         <ul className="empower__list">
-          {EmpowerLinksArr.map((i) => (
+          {EmpowerLinksArr.map((item) => (
             <li
-              key={i.id}
-              className={
-                i.id === activeId ? "empower__item active" : "empower__item"
-              }
+              key={item.id}
+              className={`empower__item ${item.id === activeId ? "active" : ""}`}
             >
-              <button
-                onClick={() => {
-                  handleClickBtn(i.id);
-                }}
-              >
-                {i.name}
+              <button onClick={() => handleClickBtn(item.id)}>
+                {item.name}
               </button>
             </li>
           ))}
         </ul>
+
         <div
           className="empower__container"
           style={{ height: activeHeight < 200 ? 400 : activeHeight }}
@@ -64,12 +59,14 @@ const Empower = () => {
               <div className="empower__sub-wrapper">
                 <h3 className="empower__sub-title">{item.title}</h3>
                 <p className="empower__desc">{item.desc}</p>
+
                 {item.link && (
                   <a className="empower__link" href="">
                     {item.link} <RightIcon />
                   </a>
                 )}
               </div>
+
               <div className="empower__img-wrapper">
                 <img src={item.url} alt="img" />
               </div>

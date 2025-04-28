@@ -1,7 +1,9 @@
+/* Modal base state (hidden) */
 .solution__modal {
   display: none;
 }
 
+/* Active modal state for larger screens (1024px and above) */
 @media (min-width: 1024px) {
   .solution__modal {
     display: flex;
@@ -23,8 +25,8 @@
     top: 68px;
     box-shadow: 0 0 1px 0 #dddee1, 0 5px 20px -5px rgba(0, 0, 0, 0.1);
     border-radius: 15px;
-    animation: productAnimate .25s linear forwards;
-    transition: width .2s ease;
+    animation: productAnimate 0.25s linear forwards;
+    transition: width 0.2s ease;
   }
 
   .solution__sub-wrapper {
@@ -33,12 +35,12 @@
 
   .solution__box {
     align-items: center;
-    padding-bottom: 0px !important;
+    padding-bottom: 0 !important;
   }
 
   .solution__list {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr); /* Simplified grid layout */
     gap: 1.5rem;
   }
 
@@ -48,7 +50,6 @@
   }
 
   .solution__title {
-    display: block;
     font-size: 0.75rem;
     line-height: 1rem;
     font-weight: 700;
@@ -63,11 +64,12 @@
     cursor: pointer;
   }
 
+  /* Keyframe animation for modal appearance */
   @keyframes productAnimate {
     0% {
       opacity: 0;
     }
-    100%{
+    100% {
       opacity: 1;
     }
   }

@@ -1,3 +1,4 @@
+/* General Styles */
 .globe__section {
   clip-path: polygon(0 0, 100% 2%, 100% 96%, 0 100%);
   background-color: #f5f5f6;
@@ -27,14 +28,23 @@
   font-weight: 700;
 }
 
-.globe__cooperation-quantity {
+.globe__cooperation-quantity,
+.globe__products-quantity {
   color: #1868db;
-  font-size: 3.5rem;
   font-weight: 700;
   line-height: 1;
 }
 
-.globe__desc {
+.globe__cooperation-quantity {
+  font-size: 3.5rem;
+}
+
+.globe__products-quantity {
+  font-size: 3rem;
+}
+
+.globe__desc,
+.globe__sub-desc {
   font-size: 1rem;
   line-height: 1.5rem;
   color: #292a2e;
@@ -51,35 +61,22 @@
   border-left: 2px solid #101214;
 }
 
-.globe__sub-desc {
-  line-height: 1.5rem;
-  font-size: 1rem;
-  color: #292a2e;
-}
-
-.globe__products-quantity {
-  color: #1868db;
-  font-size: 3rem;
-  line-height: 1;
-  font-weight: 700;
-}
-
 .globe__imgs-box {
-  box-sizing: border-box;
   position: relative;
   display: flex;
   justify-content: center;
   padding: 60px 0 0;
+  box-sizing: border-box;
 }
 
 .circular__icon {
   width: 113px;
   height: 110px;
   border-radius: 50%;
+  position: absolute;
   inset-block-start: -10%;
   inset-inline-end: 2%;
   transform: translateY(-50%);
-  margin-left: 60%;
   background-color: #fca400;
   opacity: 0.65;
   z-index: 2;
@@ -91,41 +88,31 @@
 
 .globe__img-wrapper {
   position: absolute;
-  height: auto;
   width: calc(100% + 75pt);
   aspect-ratio: 1 / 1;
   transform: translateY(-9%) rotate(142deg);
+  height: auto;
 }
 
+/* Media Queries */
 @media (min-width: 768px) {
   .globe__section {
     padding-top: 30px;
-    clip-path: polygon(
-      0 0,
-      86% 3%,
-      86% 6%,
-      100% 5%,
-      100% 93%,
-      19.2% 100%,
-      19% 84%,
-      0 84%
-    );
+    clip-path: polygon(0 0, 86% 3%, 86% 6%, 100% 5%, 100% 93%, 19.2% 100%, 19% 84%, 0 84%);
     max-width: 90pc;
   }
 
   .globe {
     margin-bottom: 60px;
-    padding: 60px 60px 60px;
+    padding: 60px;
   }
 
   .globe__wrapper {
-    display: flex;
     flex-direction: row;
     justify-content: space-between;
   }
 
   .globe__double-wrapper {
-    display: flex;
     flex-direction: row;
     align-items: center;
   }
@@ -149,18 +136,12 @@
     font-size: 1rem;
   }
 
-  .globe__countries-quantity {
-    font-size: 3rem;
-  }
-
   .globe__sub-wrapper {
-    padding: 0 40px 0 0;
+    padding-right: 40px;
   }
 
   .globe__imgs-box {
-    display: flex;
     flex-direction: row-reverse;
-    aspect-ratio: 1 / 1;
   }
 
   .light__icon {
@@ -169,14 +150,12 @@
     margin-left: -30%;
   }
 
-  .light__icon svg{
+  .light__icon svg {
     width: 100px;
     height: 106px;
   }
 
   .circular__icon {
-    position: absolute;
-    z-index: 2;
     left: 80%;
     top: 20%;
   }
@@ -195,6 +174,7 @@
     transform: rotate(33deg);
   }
 }
+
 @media (min-width: 1024px) {
   .globe__wrapper {
     justify-content: left;

@@ -16,11 +16,11 @@ const TeamWork = () => {
 
   const elementRef = useRef<HTMLSpanElement | null>(null);
   useEffect(() => {
+    // elementRef.current null bo'lishi mumkinligini tekshiradi
     if (!elementRef.current) return;
 
     if (isIntersecting) {
       elementRef.current.classList.add("in-view");
-
       elementRef.current.classList.remove("animating");
       setTimeout(() => {
         if (elementRef.current) {
@@ -40,11 +40,11 @@ const TeamWork = () => {
 
   const VideoRef = useRef<HTMLSpanElement | null>(null);
   useEffect(() => {
+    // VideoRef.current null bo'lishi mumkinligini tekshiradi
     if (!VideoRef.current) return;
 
     if (isIntersectingVideo) {
       VideoRef.current.classList.add("in-view");
-
       VideoRef.current.classList.remove("animating");
       setTimeout(() => {
         if (elementRef.current) {
@@ -55,7 +55,6 @@ const TeamWork = () => {
       VideoRef.current.classList.remove("in-view");
       VideoRef.current.classList.remove("animating");
     }
-    console.log("VideoRef", VideoRef);
   }, [isIntersectingVideo]);
 
   return (

@@ -1,9 +1,11 @@
+/* Base styles for the story section */
 .story {
   margin-top: 60px;
   position: relative;
   padding: 140px 0 60px;
 }
 
+/* Image container for check and other effects */
 .story__check-img {
   position: absolute;
   top: 10%;
@@ -12,6 +14,7 @@
   opacity: 0;
 }
 
+/* Image wrapper with animations */
 .story__img-wrapper {
   position: absolute;
   top: -50%;
@@ -19,11 +22,13 @@
   opacity: 0;
 }
 
+/* Style for the black image */
 .story__black-img {
   transform: translateY(-30%);
   margin-left: 70px;
 }
 
+/* Main wrapper for content */
 .story__wrapper {
   text-align: center;
   padding: 0 32px;
@@ -31,11 +36,11 @@
   flex-direction: column;
   gap: 32px;
   max-width: 510px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
   position: relative;
 }
 
+/* Title style */
 .story__title {
   line-height: 2.375rem;
   font-size: 2.5rem;
@@ -46,20 +51,22 @@
   font-weight: 800;
 }
 
+/* Description style */
 .story__desc {
   line-height: 1.5rem;
   font-size: 1rem;
   max-width: 460px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
 }
 
+/* Share button wrapper */
 .story__share-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+/* Share button style */
 .story__share {
   padding: 10px 24px;
   font-size: 1.25rem;
@@ -68,17 +75,15 @@
   font-weight: 500;
 }
 
-/* IntersectionObserver orqali qo'shiladigan class */
+/* IntersectionObserver class for animations */
 .story__img-wrapper.in-view {
   animation: fadeIn 0.7s forwards;
 }
 
-/* Elementga qayta kirish animatsiyasi uchun */
 .story__img-wrapper.in-view.was-out {
-  animation: none; /* Avval animatsiyani o'chiramiz */
+  animation: none;
 }
 
-/* Kichik kechikish bilan animatsiyani qayta ishga tushiramiz */
 .story__img-wrapper.in-view:not(.animating) {
   animation: none;
 }
@@ -87,6 +92,7 @@
   animation: fadeIn 0.7s forwards;
 }
 
+/* Fade-in animation */
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -97,6 +103,7 @@
   }
 }
 
+/* Animation for check image */
 .story__check-img.in-view {
   animation: checkedIn 2s forwards;
 }
@@ -113,6 +120,7 @@
   animation: checkedIn 2s forwards;
 }
 
+/* Check image animation keyframes */
 @keyframes checkedIn {
   0% {
     opacity: 0;
@@ -123,6 +131,7 @@
   }
 }
 
+/* Media queries for responsiveness */
 @media (min-width: 768px) {
   .story__check-img {
     display: block;
@@ -133,7 +142,7 @@
     left: -100px;
   }
 
-  .story__black-img{
+  .story__black-img {
     margin-left: -10px;
     margin-top: 30px;
   }

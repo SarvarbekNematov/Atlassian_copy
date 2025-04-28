@@ -186,6 +186,10 @@
   height: 24px;
 }
 
+.desctop__container{
+  display: none;
+}
+
 .teamwork__animate-wrapper {
   opacity: 0;
 }
@@ -195,7 +199,7 @@
 }
 
 .teamwork__animate-wrapper.in-view.was-out {
-  animation: none; /* Avval animatsiyani o'chiramiz */
+  animation: none;
 }
 
 .teamwork__animate-wrapper.in-view:not(.animating) {
@@ -204,20 +208,6 @@
 
 .teamwork__animate-wrapper.in-view.animating {
   animation: fadeIn 0.5s forwards;
-}
-
-.desctop__container {
-  display: none;
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
 }
 
 @media (min-width: 768px) {
@@ -338,7 +328,7 @@
   }
 
   .desctop__link {
-    color: #803fa5;
+    color: #1868db;
     display: flex;
     align-items: center;
     gap: 1px;

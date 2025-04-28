@@ -1,3 +1,4 @@
+/* Base styles for rovo section */
 .rovo {
   color: white;
   text-align: center;
@@ -47,6 +48,7 @@
   transform: translateY(-50px);
 }
 
+/* Media queries */
 @media (min-width: 768px) {
   .rovo__wrapper {
     padding: 60px 60px;
@@ -56,6 +58,7 @@
     padding: 0 60px;
   }
 }
+
 @media (min-width: 1024px) {
   .rovo {
     margin-top: 100px;

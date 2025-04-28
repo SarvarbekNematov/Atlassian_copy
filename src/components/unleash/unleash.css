@@ -1,20 +1,20 @@
 .unleash__wrapper {
   background-color: #1868db;
+  color: #fff;
   text-align: center;
   padding: 80px 32px;
   clip-path: polygon(0 0, 100% 4%, 100% 97%, 28% 100%, 28% 87%, 0 87%);
-  color: #fff;
 }
 
 .unleash__title {
-  line-height: 1.875rem;
   font-size: 32px;
+  line-height: 1.875rem;
 }
 
 .unleash__desc {
+  margin: 16px 0;
   font-size: 1rem;
   line-height: 1.5rem;
-  margin: 16px 0;
 }
 
 .unleash__link-wrapper {
@@ -24,73 +24,67 @@
 }
 
 .unleash__link {
+  margin-bottom: 32px;
   padding: 10px 24px;
-  margin: 0 0 32px;
   border: 2px solid #fff;
   border-radius: 40px;
-  line-height: 1.5rem;
   font-size: 1.25rem;
   font-weight: 500;
+  line-height: 1.5rem;
 }
 
 .unleash__teamwork {
   position: relative;
-  font-weight: 800;
   display: inline-block;
   margin-left: 7px;
+  font-weight: 800;
 }
 
 .unleash__img-wrapper {
   position: absolute;
-  width: 100%;
   left: 0;
+  width: 100%;
   word-break: break-word;
-}
-
-.animateImgUnleash {
-  animation: unleashAnimateImg 1.5s ease-in-out 0.5s 1 forwards;
+  opacity: 0; /* Default holat */
 }
 
 .unleash__img-wrapper img {
   width: 100%;
 }
 
-.unleash__img-wrapper {
-  opacity: 0;
-  /* Animatsiya avtomatik ishlamaydi */
+.animateImgUnleash {
+  animation: unleashAnimateImg 1.5s ease-in-out 0.5s forwards;
 }
 
-/* IntersectionObserver orqali qo'shiladigan class */
+/* IntersectionObserver orqali qo‘shiladigan class */
 .unleash__img-wrapper.in-view {
   animation: teamworkAnimation 0.5s forwards;
 }
 
-/* Elementga qayta kirish animatsiyasi uchun */
-.unleash__img-wrapper.in-view.was-out {
-  animation: none; /* Avval animatsiyani o'chiramiz */
-}
-
-/* Kichik kechikish bilan animatsiyani qayta ishga tushiramiz */
+/* Qayta kirganda animatsiyani o‘chirish */
+.unleash__img-wrapper.in-view.was-out,
 .unleash__img-wrapper.in-view:not(.animating) {
   animation: none;
 }
 
+/* Animatsiyani qayta ishga tushirish */
 .unleash__img-wrapper.in-view.animating {
   animation: teamworkAnimation 0.5s forwards;
 }
 
+/* Animatsiya kaliti */
 @keyframes teamworkAnimation {
   0% {
     opacity: 0;
     transform: translateX(-30%);
   }
-
   100% {
     opacity: 1;
     transform: translateX(0);
   }
 }
 
+/* Tablet va undan katta ekranlar uchun */
 @media (min-width: 768px) {
   .unleash__wrapper {
     clip-path: polygon(

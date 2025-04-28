@@ -1,12 +1,12 @@
 .header {
-  padding: 8px;
+  padding: 8px ;
   max-width: 100%;
-  position: fixed; /* Fixed position */
-  top: 0; /* Yuqorida joylashishi uchun */
-  left: 0; /* Chap tomondan boshlash */
+  position: fixed;
+  top: 0;
+  left: 0;
   right: 0;
-  z-index: 1000; /* Boshqa elementlar ustida joylashishi uchun */
-  background-color: #fff; /* Orqa fon */
+  z-index: 1000;
+  background-color: #fff;
 }
 
 .header__wrapper {
@@ -14,8 +14,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 1rem;
-  max-width: 1272px; /* Maksimal kenglik */
-  margin: 0 auto; /* Markazlashtirish */
+  max-width: 1272px;
+  margin: 0 auto;
 }
 
 .menu__sub-wrapper {
@@ -76,7 +76,7 @@
     align-items: center;
   }
 
-  .header{
+  .header {
     z-index: 100;
   }
 

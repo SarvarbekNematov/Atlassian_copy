@@ -1,3 +1,4 @@
+/* Base styles for Jira section */
 .jira {
   padding: 0 32px;
   margin-bottom: 60px;
@@ -21,14 +22,11 @@
   inset-block-end: -24.5%;
   width: 100%;
   left: 0;
-  animation-name: jiraBg;
-  animation-duration: 0.7s;
-  animation-delay: 0.5s;
-  animation-iteration-count: 1;
+  animation: jiraBg 0.7s 0.5s forwards;
   z-index: -1;
-  animation-fill-mode: forwards;
   word-break: break-word;
 }
+
 .jira__link-wrapper {
   display: flex;
   justify-content: center;
@@ -57,7 +55,6 @@
 .jira__card {
   height: 90px;
   width: 173px;
-  min-width: 173px;
   padding: 8px;
   display: flex;
   flex-direction: column;
@@ -98,16 +95,7 @@
 
 .jira__bg {
   position: absolute;
-  clip-path: polygon(
-    0.5% 0,
-    50% 0,
-    50% 10%,
-    98.5% 0,
-    100% 85%,
-    17.75% 100%,
-    17.25% 85%,
-    0 85%
-  );
+  clip-path: polygon(0.5% 0, 50% 0, 50% 10%, 98.5% 0, 100% 85%, 17.75% 100%, 17.25% 85%, 0 85%);
   width: calc(100% + 200px);
   inset-inline-start: -50px;
   inset-block-start: 45%;
@@ -116,7 +104,7 @@
   background-color: #1868db;
 }
 
-/* animation */
+/* Background animation */
 .jira__background-animate {
   opacity: 0;
 }
@@ -125,10 +113,7 @@
   animation: jiraBg 0.5s forwards;
 }
 
-.jira__background-animate.in-view.was-out {
-  animation: none;
-}
-
+.jira__background-animate.in-view.was-out,
 .jira__background-animate.in-view:not(.animating) {
   animation: none;
 }
@@ -137,18 +122,19 @@
   animation: jiraBg 0.5s forwards;
 }
 
+/* Keyframe for background animation */
 @keyframes jiraBg {
   0% {
     opacity: 0;
     transform: translateX(-30%);
   }
-
   100% {
     opacity: 1;
     transform: translateX(0);
   }
 }
 
+/* Responsive styles */
 @media (min-width: 768px) {
   .jira {
     padding: 0 60px;
@@ -167,7 +153,6 @@
 
   .jira__link-wrapper {
     margin: 30px 0 40px;
-
   }
 
   .jira__list {

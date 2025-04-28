@@ -6,11 +6,12 @@ import { JiradataAll } from "../../data";
 import "./jira.css";
 
 const Jira = () => {
-  const [data, setData] = useState(JiradataAll.filter((i) => i.id === 1));
   const [activeId, setActiveId] = useState(0);
+  
+  // Get data for the active ID directly
+  const activeData = JiradataAll.find(item => item.id === activeId);
+
   const handleClickBtn = (id: number) => {
-    const FilteredData = JiradataAll.filter((i) => i.id === id);
-    setData(FilteredData);
     setActiveId(id);
   };
 
@@ -19,26 +20,30 @@ const Jira = () => {
   });
 
   // Animatsiya bo'lganligini kuzatish uchun ref
-  const elementRef = useRef<HTMLSpanElement  | null>(null);
+  const elementRef = useRef<HTMLSpanElement | null>(null);
+  
   useEffect(() => {
     if (!elementRef.current) return;
 
-    if (isIntersecting) {
-      // Element ko'rinish maydoniga kirganda
-      elementRef.current.classList.add("in-view");
+    const handleAnimation = () => {
+      if (elementRef.current) {
+        elementRef.current.classList.add("in-view");
+        elementRef.current.classList.remove("animating");
 
-      // Animatsiyani qayta ishga tushirish uchun
-      elementRef.current.classList.remove("animating");
-      // Kichik kechikish bilan class qo'shish orqali animatsiyani yangilash
-      setTimeout(() => {
-        if (elementRef.current) {
-          elementRef.current.classList.add("animating");
-        }
-      }, 10);
+        setTimeout(() => {
+          if (elementRef.current) {
+            elementRef.current.classList.add("animating");
+          }
+        }, 10);
+      }
+    };
+
+    if (isIntersecting) {
+      handleAnimation();
     } else {
-      // Element ko'rinish maydonidan chiqqanda
-      elementRef.current.classList.remove("in-view");
-      elementRef.current.classList.remove("animating");
+      if (elementRef.current) {
+        elementRef.current.classList.remove("in-view", "animating");
+      }
     }
   }, [isIntersecting]);
 
@@ -67,18 +72,14 @@ const Jira = () => {
         </a>
       </div>
       <ul className="jira__list">
-        {JiradataAll.map((i, index) => (
+        {JiradataAll.map((i) => (
           <li
-            key={index}
-            className={
-              i.id === activeId ? "jira__card jira__active" : "jira__card"
-            }
-            onClick={() => {
-              handleClickBtn(i.id);
-            }}
+            key={i.id}
+            className={`jira__card ${i.id === activeId ? "jira__active" : ""}`}
+            onClick={() => handleClickBtn(i.id)}
           >
             <span className="jira__icon">
-              <img src={i.icons} alt="" />
+              <img src={i.icons} alt={i.title} />
             </span>
             <p className="jira__sub-title">{i.title}</p>
           </li>
@@ -100,13 +101,16 @@ const Jira = () => {
                 src="https://wac-cdn.atlassian.com/misc-assets/webp-images/CSD-10721_WAC_Hero_FULL_LowBR.mp4"
                 type="video/mp4"
               />
-              Sizning brauzeringiz videoni qo‘llab-quvvatlamaydi.
+              Your browser does not support the video tag.
             </video>
           </div>
         ) : (
-          <div className="jira__img" onClick={() => setActiveId(0)}>
-            <img src={data[0].img} alt="" />
-          </div>
+          // Ensure the image is only rendered when data exists
+          activeData ? (
+            <div className="jira__img" onClick={() => setActiveId(0)}>
+              <img src={activeData.img} alt={activeData.title} />
+            </div>
+          ) : null // If no data is found, return null to avoid errors
         )}
         <div className="jira__bg"></div>
       </div>

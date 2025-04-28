@@ -1,3 +1,4 @@
+/* General Styles */
 .customer__wrapper {
   margin: 40px 0;
   padding: 0 32px;
@@ -30,14 +31,11 @@
   position: relative;
 }
 
-.customer__clip-container{
+.customer__clip-container {
   clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
   background-color: #000;
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  inset: 0; /* shorthand for top, right, bottom, left */
   z-index: -1;
 }
 
@@ -101,6 +99,7 @@
   animation: fadeswipesmall 1s ease-in-out 1;
 }
 
+/* List Section */
 .customer__list {
   background-color: #000;
   width: 100%;
@@ -109,9 +108,7 @@
   overflow-x: auto;
   white-space: nowrap;
   gap: 32px;
-  padding-bottom: 40px;
-  padding-left: 32px;
-  padding-right: 32px;
+  padding: 0 32px 40px;
 }
 
 .customer__item {
@@ -139,6 +136,7 @@
   cursor: pointer;
 }
 
+/* Image Section */
 .customer__img-wrapper {
   display: flex;
   justify-content: center;
@@ -153,6 +151,7 @@
   width: 100%;
 }
 
+/* Animations */
 @keyframes fadeswipesmall {
   0% {
     opacity: 0;
@@ -164,9 +163,9 @@
   }
 }
 
+/* Media Queries */
 @media (min-width: 1024px) {
   .customer__sub-card {
-    display: flex;
     flex-direction: row;
     padding-top: 80px;
     gap: 1.25rem;

@@ -8,20 +8,29 @@ const Template = () => {
     <div className="template">
       <h4 className="template__title">Get started with a template</h4>
       <div className="template__list-wrapper">
+        {/* Template item list */}
         <ul className="template__list">
-        {TemplatedataArr.map((i , index) => (
-          <li key={index} className="template__item">
-            <img className="template__img" src={i.url} alt="img" />
-            <div className="template__wrapper">
-              <h5 className="template__sub-title">{i.title}</h5>
-              <p className="template__desc">{i.desc}</p>
-              <a className="template__link" href="">
-                Try it out <RightIcon/>
-              </a>
-            </div>
-          </li>
-        ))}
-      </ul>
+          {TemplatedataArr.map((item, index) => (
+            <li key={index} className="template__item">
+              {/* Image for template */}
+              <img className="template__img" src={item.url} alt={item.title} />
+
+              {/* Wrapper for text content */}
+              <div className="template__wrapper">
+                {/* Template Title */}
+                <h5 className="template__sub-title">{item.title}</h5>
+
+                {/* Template Description */}
+                <p className="template__desc">{item.desc}</p>
+
+                {/* Link to try out the template */}
+                <a className="template__link" href="">
+                  Try it out <RightIcon />
+                </a>
+              </div>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );
